@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Presenter view · One UNISA</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{--bg:#0c0d0f;--panel:#141619;--panel2:#1b1e22;--line:#2a2e34;--line2:#3a3f47;--fg:#eeebe6;--muted:#a3a7ae;--dim:#6f747c;--red:#e3241b;--spoke:#e4b844;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;--body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.5 var(--body);display:grid;grid-template-rows:auto 1fr auto;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;align-items:center;gap:24px;padding:14px 22px;border-bottom:1px solid var(--line)}
+header .brand{display:flex;gap:10px;align-items:center;font-weight:500}
+header .brand svg{width:20px;height:22px}
+.clock{margin-left:auto;display:flex;gap:28px;align-items:baseline}
+.clock b{font-family:var(--display);font-stretch:112%;font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;display:block;line-height:1}
+.clock button{border:1px solid var(--line2);background:var(--panel);border-radius:6px;padding:3px 8px;font-size:11px;margin-left:6px;vertical-align:middle}
+main{display:grid;grid-template-columns:1.45fr 1fr;gap:20px;padding:20px 22px;min-height:0;overflow:auto}
+.now,.side{display:flex;flex-direction:column;gap:14px;min-height:0}
+.shot{position:relative;flex:none;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--line);height:min(42vh,440px)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot span{position:absolute;left:12px;top:12px;background:rgba(8,9,11,.8);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:4px 9px}
+h1{font-family:var(--display);font-stretch:112%;font-size:30px;margin:0;line-height:1.1}
+.notes{font-size:21px;line-height:1.5;max-width:60ch}
+.take{color:var(--spoke);font-size:17px;border-top:1px solid var(--line);padding-top:12px}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:16px;display:grid;gap:10px}
+.next .shot{height:min(20vh,190px)}
+.next b{font-size:17px}
+.vo .cap{font-size:15px;color:var(--fg);min-height:3em}
+.vo .row{display:flex;gap:10px;align-items:center}
+.btn{border:1px solid var(--line2);background:var(--panel2);border-radius:10px;padding:10px 16px;font-size:15px}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.list{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.list button{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px 8px;text-align:left;font-size:12.5px;line-height:1.3;color:var(--muted)}
+.list button[aria-current="true"]{border-color:var(--fg);color:var(--fg)}
+.qr{display:flex;gap:14px;align-items:center}
+.qr .code{width:118px;height:118px;background:#fff;border-radius:8px;padding:8px;flex:none}
+.qr .code svg{width:100%;height:100%;display:block}
+footer{display:flex;gap:12px;align-items:center;padding:12px 22px;border-top:1px solid var(--line)}
+footer .big{padding:14px 30px;font-size:17px}
+footer .keys{margin-left:auto}
+.lost{position:fixed;inset:0;background:rgba(5,6,7,.94);display:grid;place-items:center;text-align:center;font-size:18px;z-index:5}
+@media (max-width:900px){main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand"><svg viewBox="0 0 100 111" aria-hidden="true"><circle cx="49.95" cy="60.94" r="35.36" fill="none" stroke="#fff" stroke-width="28.98"/><circle cx="87.79" cy="6.99" r="7.04" fill="#fff"/></svg>Presenter view</span>
+  <span class="mono" id="pos">Slide 01 of 12</span>
+  <div class="clock">
+    <div><span class="mono">Elapsed</span><b id="elapsed">00:00</b><button type="button" id="reset">Reset</button></div>
+    <div><span class="mono">Time</span><b id="time">--:--</b></div>
+  </div>
+</header>
+<main>
+  <section class="now">
+    <div class="shot"><img id="nowImg" alt=""><span class="mono">Now</span></div>
+    <h1 id="nowTitle"></h1>
+    <p class="notes" id="nowNotes"></p>
+    <p class="take" id="nowTake"></p>
+  </section>
+  <aside class="side">
+    <div class="card next">
+      <span class="mono">Next</span>
+      <div class="shot"><img id="nextImg" alt=""></div>
+      <b id="nextTitle"></b>
+    </div>
+    <div class="card vo">
+      <span class="mono" id="voState">Voiceover</span>
+      <p class="cap" id="voCap"></p>
+      <div class="row"><button class="btn primary" type="button" data-cmd="toggle" id="voBtn">Play voiceover</button><button class="btn" type="button" data-cmd="black" id="blackBtn" aria-pressed="false">Black screen</button></div>
+    </div>
+    <div class="card"><span class="mono">Jump to</span><div class="list" id="list"></div></div>
+    <div class="card qr" id="qrCard" hidden><div class="code" id="qr"></div><div><span class="mono">Phone remote</span><p style="margin:6px 0 0;font-size:14px;color:var(--muted)">Scan with a phone on the same Wi-Fi to change slides and pause the voice from anywhere in the room.</p></div></div>
+    <p class="mono" id="qrHint" style="text-transform:none;letter-spacing:.02em;line-height:1.6">For a phone remote, start the deck with <b>node tools/serve.mjs</b> and open the address it prints.</p>
+  </aside>
+</main>
+<footer>
+  <button class="btn big" type="button" data-cmd="prev">← Previous</button>
+  <button class="btn big primary" type="button" data-cmd="next">Next →</button>
+  <span class="mono keys">Arrows or clicker: next and previous · Space: voice · B: black screen</span>
+</footer>
+<div class="lost" id="lost" hidden><div>The deck window is closed.<br><span class="mono">Open index.html and press Present again.</span></div></div>
+<script src="vendor/qrcode.min.js"></script>
+<script>
+(function(){
+/* Presenter view: mirrors the deck window that opened it and sends it commands. */
+const $=s=>document.querySelector(s), pad=n=>String(n).padStart(2,'0');
+const deck=window.opener;
+const send=(cmd,arg)=>{try{deck&&!deck.closed&&deck.postMessage({ns:'oneunisa',cmd,arg},'*')}catch(e){}};
+const thumb=id=>'img/thumbs/'+id+'.webp';
+let st=null, t0=Date.now(), qrUrl=null;
+function render(){
+  if(!st)return;
+  const i=st.i;
+  $('#pos').textContent='Slide '+pad(i+1)+' of '+pad(st.n);
+  $('#nowImg').src=thumb(st.ids[i]); $('#nowTitle').textContent=st.titles[i];
+  $('#nowNotes').textContent=st.notes[1]; $('#nowTake').textContent=st.notes[2];
+  const nx=i+1<st.n?i+1:null;
+  $('#nextImg').src=nx!=null?thumb(st.ids[nx]):'img/inkspired-logo.png'; $('#nextTitle').textContent=nx!=null?st.titles[nx]:'End of the deck';
+  const v=st.vo;
+  $('#voState').textContent=v.state==='idle'?'Voiceover ready':v.state==='ended'?'Voiceover finished':(v.state==='paused'?'Paused':'Playing')+' · line '+v.line+' of '+v.lines;
+  $('#voCap').textContent=v.cap||'';
+  $('#voBtn').textContent=v.state==='playing'?'Pause voiceover':v.state==='paused'?'Resume voiceover':v.state==='ended'?'Replay voiceover':'Play voiceover';
+  $('#blackBtn').setAttribute('aria-pressed',String(!!st.black));
+  const list=$('#list');
+  if(list.children.length!==st.n)list.innerHTML=st.titles.map((t,k)=>'<button type="button" data-go="'+k+'">'+pad(k+1)+' '+t+'</button>').join('');
+  [...list.children].forEach((b,k)=>b.setAttribute('aria-current',String(k===i)));
+  if(st.remote&&st.remote!==qrUrl&&window.qrcode){qrUrl=st.remote;const q=qrcode(0,'M');q.addData(qrUrl);q.make();$('#qr').innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});$('#qrCard').hidden=false;$('#qrHint').hidden=true}
+}
+addEventListener('message',e=>{const d=e.data;if(d&&d.ns==='oneunisa'&&d.type==='state'){st=d;render()}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-cmd],[data-go]');if(!b)return;if(b.dataset.go!=null)send('go',b.dataset.go);else send(b.dataset.cmd)});
+addEventListener('keydown',e=>{
+  const k=e.key;
+  if(k==='ArrowRight'||k==='PageDown'||k==='ArrowDown'){e.preventDefault();send('next')}
+  else if(k==='ArrowLeft'||k==='PageUp'||k==='ArrowUp'){e.preventDefault();send('prev')}
+  else if(k===' '){e.preventDefault();send('toggle')}
+  else if(k==='b'||k==='B'||k==='.')send('black');
+});
+$('#reset').onclick=()=>t0=Date.now();
+setInterval(()=>{
+  const s=Math.floor((Date.now()-t0)/1000);$('#elapsed').textContent=pad(Math.floor(s/60))+':'+pad(s%60);
+  const d=new Date();$('#time').textContent=pad(d.getHours())+':'+pad(d.getMinutes());
+  $('#lost').hidden=!!(deck&&!deck.closed);
+},500);
+send('hello');
+})();
+</script>
+</body>
+</html>

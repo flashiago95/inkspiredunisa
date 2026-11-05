@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0c0d0f">
+<title>Remote · One UNISA</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{--bg:#0c0d0f;--panel:#141619;--panel2:#1b1e22;--line:#2a2e34;--line2:#3a3f47;--fg:#eeebe6;--muted:#a3a7ae;--red:#e3241b;--spoke:#e4b844;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;--body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.45 var(--body);display:grid;grid-template-rows:auto auto 1fr auto;gap:14px;padding:calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom));user-select:none}
+button{font:inherit;color:inherit;border:1px solid var(--line2);background:var(--panel2);border-radius:16px;cursor:pointer}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--display);font-stretch:112%;font-size:26px;margin:4px 0 0;line-height:1.1}
+.cap{font-size:15px;color:var(--muted);min-height:4.4em}
+.pad{display:grid;grid-template-columns:1fr 1.6fr;gap:12px;min-height:0}
+.pad button{font-size:22px}
+.pad .next{background:var(--fg);color:var(--bg);border-color:var(--fg);font-weight:600}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row button{padding:16px;font-size:16px}
+.row .vo{background:var(--red);border-color:var(--red);color:#fff}
+.row [aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.off{position:fixed;inset:auto 16px calc(16px + env(safe-area-inset-bottom));background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:12px;text-align:center;font-size:14px}
+</style>
+</head>
+<body>
+<div><span class="mono" id="pos">Connecting…</span><h1 id="title">One UNISA</h1></div>
+<p class="cap" id="cap"></p>
+<div class="pad"><button type="button" data-cmd="prev" aria-label="Previous">←</button><button type="button" class="next" data-cmd="next">Next →</button></div>
+<div class="row"><button type="button" class="vo" data-cmd="toggle" id="vo">Play voice</button><button type="button" data-cmd="black" id="black" aria-pressed="false">Black screen</button></div>
+<div class="off" id="off" hidden>Waiting for the deck. Keep it open on the presenting laptop.</div>
+<script>
+(function(){
+/* Phone remote: sends commands to the deck through tools/serve.mjs and shows where the deck is. */
+const $=s=>document.querySelector(s), pad=n=>String(n).padStart(2,'0');
+const t=new URLSearchParams(location.search).get('t')||'';
+const send=cmd=>{fetch('remote/cmd?t='+encodeURIComponent(t),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({cmd})}).catch(()=>{});if(navigator.vibrate)navigator.vibrate(12)};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-cmd]');if(b)send(b.dataset.cmd)});
+const es=new EventSource('remote/events?role=phone&t='+encodeURIComponent(t));
+es.onopen=()=>$('#off').hidden=true;
+es.onerror=()=>$('#off').hidden=false;
+es.onmessage=e=>{
+  let s;try{s=JSON.parse(e.data)}catch(_){return}
+  if(!s||s.type!=='state')return;
+  $('#off').hidden=true;
+  $('#pos').textContent='Slide '+pad(s.i+1)+' of '+pad(s.n);
+  $('#title').textContent=s.titles[s.i];
+  $('#cap').textContent=s.vo.cap||'';
+  $('#vo').textContent=s.vo.state==='playing'?'Pause voice':s.vo.state==='paused'?'Resume voice':'Play voice';
+  $('#black').setAttribute('aria-pressed',String(!!s.black));
+};
+})();
+</script>
+</body>
+</html>

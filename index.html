@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>One UNISA Global Model</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="css/deck.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#africa" data-go="africa" aria-label="Inkspired Architects, back to the start">
+      <svg viewBox="0 0 100 111" aria-hidden="true"><circle cx="49.95" cy="60.94" r="35.36" fill="none" stroke="#fff" stroke-width="28.98"/><circle cx="87.79" cy="6.99" r="7.04" fill="#fff"/></svg>
+      <img src="img/inkspired-wordmark.png" alt="inkspired" width="796" height="145">
+    </a>
+    <nav class="nav" aria-label="Chapters">
+      <a href="#question" data-go="question">Question</a>
+      <a href="#model" data-go="model">Model</a>
+      <a href="#journey" data-go="journey">Journey</a>
+      <a href="#sites" data-go="sites">Sites</a>
+      <a href="#capital" data-go="capital">Case for capital</a>
+      <a href="#ask" data-go="ask">The ask</a>
+      <a href="#gallery" data-go="gallery">Gallery</a>
+    </nav>
+    <span class="unisa-chip"><img src="img/unisa-logo.png" alt="UNISA, University of South Africa" width="600" height="117"></span>
+    <button class="present" id="presentBtn" type="button" aria-pressed="false"><i></i><span>Present</span></button>
+  </div>
+</header>
+<div class="prog" aria-hidden="true"><i id="progBar"></i></div>
+
+<main class="deck" id="deck" aria-roledescription="slide deck" aria-label="One UNISA">
+<div class="track" id="track">
+
+<!-- 00 AFRICA, AT A DISTANCE -->
+<section id="africa" class="pg pro-pg" data-chap="vision" aria-roledescription="slide" aria-label="Africa, at a distance">
+  <div class="pro-stage" id="proStage">
+    <canvas id="globe" aria-hidden="true"></canvas>
+    <div class="pro-scrim"></div>
+    <div class="pro-labels" id="proLabels" aria-hidden="true"></div>
+  </div>
+  <div class="pro-copy">
+    <div class="wrap">
+      <div class="pro-step" data-ph="0">
+        <span class="mono pro-kicker"><b></b>Inkspired Architects for the University of South Africa</span>
+        <h1>One UNISA</h1>
+        <p>A connected learning ecosystem for a continent that studies at a distance.</p>
+        <button class="cta" id="heroCta" type="button"><i><svg viewBox="0 0 16 16" fill="#fff"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></i><span>Play the narrated tour</span><small id="ctaMin"></small></button>
+      </div>
+      <div class="pro-step" data-ph="1">
+        <span class="mono pro-kicker"><b></b>Today</span>
+        <h1>Africa, at a distance.</h1>
+        <p>Students study alone: at kitchen tables, on phones, far from support, laboratories and employers.</p>
+      </div>
+      <div class="pro-step" data-ph="2">
+        <span class="mono pro-kicker"><b></b>One UNISA</span>
+        <h1>Now, a front door.</h1>
+        <p>Three sites where their regions’ economies already live, joined by one digital backbone from the main campus.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pro-foot">
+    <div class="wrap">
+      <div class="pro-dots" id="proDots"><button type="button" data-ph="0" aria-label="One UNISA"></button><button type="button" data-ph="1" aria-label="Africa, at a distance"></button><button type="button" data-ph="2" aria-label="A front door"></button></div>
+      <span class="mono pro-note">Illustrative. Points of light stand for distance learners, not actual locations.</span>
+    </div>
+  </div>
+</section>
+
+<!-- 01 VISION -->
+<section id="vision" class="pg hero-pg" data-chap="vision" aria-roledescription="slide" aria-label="One UNISA">
+  <div class="hero" id="hero">
+    <svg class="hero-ring" viewBox="0 0 100 111" aria-hidden="true"><circle class="r" pathLength="100" cx="49.95" cy="60.94" r="35.36" fill="none" stroke="#fff" stroke-width="28.98"/><circle class="d" cx="87.79" cy="6.99" r="7.04" fill="#fff"/></svg>
+    <div class="slide on" style="--acc:var(--hub)" data-i="0">
+      <div class="px"><img src="img/d-hub-night.webp" alt="The Hub, Cape Town Marine Studies, at night on the waterfront with Table Mountain behind" width="1600" height="802"></div>
+    </div>
+    <div class="slide" style="--acc:var(--centre)" data-i="1">
+      <div class="px"><img src="img/d-cen-exterior.webp" alt="The Centre, Mahikeng Mining Knowledge Centre, in afternoon light" width="1600" height="900"></div>
+    </div>
+    <div class="slide" style="--acc:var(--spoke)" data-i="2">
+      <div class="px"><img src="img/g-spk-exterior.webp" alt="The Spoke, Mthatha, street frontage at golden hour" width="1600" height="903"></div>
+    </div>
+    <div class="hero-copy" data-spot>
+      <div class="wrap">
+        <div id="heroCopy" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="hero-ctrl">
+      <div class="wrap">
+        <div class="segs" id="segs">
+          <button class="seg" type="button" data-i="0" aria-current="true"><span>01 The Hub</span><i></i></button>
+          <button class="seg" type="button" data-i="1"><span>02 The Centre</span><i></i></button>
+          <button class="seg" type="button" data-i="2"><span>03 The Spoke</span><i></i></button>
+        </div>
+        <button class="hbtn" id="heroPause" type="button" aria-label="Pause slides"></button>
+        <button class="hbtn" id="heroNext" type="button" aria-label="Next image"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="wrap">
+      <div data-spot><b data-count="3">3</b><span>connected sites, one network</span></div>
+      <div data-spot><b data-count="7900" data-fmt="m2">7,900 m²</b><span>stated gross floor area</span></div>
+      <div data-spot><b data-count="3">3</b><span>regional catalytic niches</span></div>
+      <div data-spot><b data-count="1">1</b><span>design language and digital backbone</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 QUESTION -->
+<section id="question" class="pg" data-chap="question" aria-roledescription="slide" aria-label="The question for this board">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">The question for this board</span></div>
+    <p class="quote" data-spot>UNISA has taught Africa at a distance for generations. <strong>What if that distance had a front door?</strong></p>
+    <div class="gaps">
+      <div class="gap" data-spot><span class="mono">Gap one</span><h3>A place to be supported</h3><p>Distance students study at kitchen tables and on phones. When they fall behind, nobody sees it until results are published.</p></div>
+      <div class="gap" data-spot><span class="mono">Gap two</span><h3>Laboratories for research</h3><p>Marine science, geoscience and pharmacy need equipment, data and supervision that a screen alone cannot provide.</p></div>
+      <div class="gap" data-spot><span class="mono">Gap three</span><h3>A meeting point with industry</h3><p>Employers, ports, mines and clinics need somewhere to meet the graduates they will hire and the research they will fund.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 MODEL -->
+<section id="model" class="pg" data-chap="model" aria-roledescription="slide" aria-label="The model">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">The model</span></div>
+    <div class="model">
+      <div class="mcol">
+        <div class="head" data-spot>
+          <h2>One UNISA. Three sites. One system.</h2>
+          <p class="lede">Each site anchors a catalytic niche its region already lives by, and is sized to the community it serves. All three share one design language and one digital backbone run from the main campus.</p>
+        </div>
+        <div class="tiers arm-target" id="tiers" data-spot>
+          <button class="tier" type="button" data-site="hub" style="--acc:var(--hub);--w:100%"><span class="dot"></span><h3>The Hub, Cape Town</h3><span class="m2">5,000<small>m²</small></span><p>Marine studies and the blue economy</p><span class="scale"><i></i></span></button>
+          <button class="tier" type="button" data-site="centre" style="--acc:var(--centre);--w:44%"><span class="dot"></span><h3>The Centre, Mahikeng</h3><span class="m2">2,200<small>m²</small></span><p>Mining and geoscience</p><span class="scale"><i></i></span></button>
+          <button class="tier" type="button" data-site="spoke" style="--acc:var(--spoke);--w:14%"><span class="dot"></span><h3>The Spoke, Mthatha</h3><span class="m2">700<small>m²</small></span><p>Pharmaceutical and health studies</p><span class="scale"><i></i></span></button>
+          <div class="total"><span class="mono">Network total, stated</span><b>7,900 m²</b></div>
+        </div>
+      </div>
+      <div class="map" data-spot>
+        <svg id="mapSvg" viewBox="0 0 620 520" role="img" aria-label="Schematic map of South Africa showing Cape Town, Mahikeng and Mthatha linked to the Pretoria main campus"></svg>
+        <span class="cap">Schematic. Not to scale.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 JOURNEY -->
+<section id="journey" class="pg" data-chap="journey" aria-roledescription="slide" aria-label="Student experience">
+  <div class="wrap fill">
+    <div class="sheet"><span class="n"></span><span class="t">Student experience</span></div>
+    <div class="head jhead" data-spot>
+      <h2>A student journey that reaches out first.</h2>
+      <p class="lede">The buildings exist to deliver a service model. At every stage the system acts before the student has to ask, and every stage has a number the university can track.</p>
+    </div>
+    <div class="curve" data-spot>
+      <div class="cs"><svg id="curveSvg" viewBox="0 0 1000 150" role="group" aria-label="Journey stages"></svg></div>
+    </div>
+    <div class="stage grow" id="stage" data-spot></div>
+  </div>
+</section>
+
+<!-- 05 SITES -->
+<section id="sites" class="pg" data-chap="sites" aria-roledescription="slide" aria-label="The three sites">
+  <div class="wrap fill">
+    <div class="sheet"><span class="n"></span><span class="t">The three sites</span></div>
+    <div class="rowhead">
+      <div class="head">
+        <h2>Every square metre has a job.</h2>
+        <p class="note">Explore each site through its renders. Areas are taken directly from the proposed accommodation framework.</p>
+      </div>
+      <div class="tabs sm" role="tablist" aria-label="Sites" data-tabs></div>
+    </div>
+    <div class="site-top grow" id="sitePanel" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- 06 BRIEF -->
+<section id="brief" class="pg" data-chap="sites" aria-roledescription="slide" aria-label="Accommodation brief and zoning">
+  <div class="wrap fill">
+    <div class="sheet"><span class="n"></span><span class="t">The three sites · brief and zoning</span></div>
+    <div class="rowhead">
+      <div class="head">
+        <h2>A brief specific enough to cost.</h2>
+        <p class="note">Every zone is named and measured, and the balance for circulation is declared openly.</p>
+      </div>
+      <div class="tabs sm" role="tablist" aria-label="Sites" data-tabs></div>
+    </div>
+    <div class="site-low grow" id="briefPanel" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- 07 CAPITAL -->
+<section id="capital" class="pg capital" data-chap="capital" aria-roledescription="slide" aria-label="The case for capital">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">The case for capital</span></div>
+    <div class="capgrid">
+      <div class="ccol">
+        <div class="head" data-spot><h2>Design once. Deploy many. Release capital against evidence.</h2></div>
+        <div class="kpis">
+          <div data-spot><b>7,900 m²</b><span>Stated gross area across three sites</span></div>
+          <div data-spot><b>6,885 m²</b><span>Allocated to named functions in the brief</span></div>
+          <div data-spot><b>87%</b><span>Allocation efficiency, named functions to gross</span></div>
+          <div data-spot><b>5</b><span>Board gates before the network is complete</span></div>
+        </div>
+        <div class="card arm-target" id="mixCard" data-spot>
+          <div class="card-h"><h3>Space mix by site</h3><span class="mono">Share of stated gross area</span></div>
+          <div class="mix" id="mix"></div>
+          <div class="legend" style="margin-top:18px">
+            <span><i style="background:var(--cat-l)"></i>Learning and teaching</span>
+            <span><i style="background:var(--cat-r)"></i>Research and innovation</span>
+            <span><i style="background:var(--cat-s)"></i>Student support and public</span>
+            <span><i style="background:var(--cat-a)"></i>Administration and operations</span>
+            <span><i style="background:repeating-linear-gradient(135deg,var(--cat-u) 0 3px,#2a2e34 3px 6px)"></i>Circulation and services, to be confirmed</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="kitCard" data-spot>
+        <div class="card-h"><h3>One kit of parts</h3><span class="mono">Modules by site, m²</span></div>
+        <div class="scroll-x"><table class="matrix" id="matrix"></table></div>
+        <p style="font-size:13px;color:var(--muted);margin-top:10px">The same modules repeat at every scale. One specification for furniture, technology, wayfinding and finishes is designed once and procured across the network.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 LEVERS -->
+<section id="levers" class="pg capital" data-chap="capital" aria-roledescription="slide" aria-label="Three levers">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">The case for capital · levers</span></div>
+    <div class="head wide" data-spot>
+      <h2>Three levers, each with a measure.</h2>
+      <p class="lede">A repeatable model lowers design cost and delivery risk at every site, smart building data makes space earn its keep, and each site opens new partnership income.</p>
+    </div>
+    <div class="levers">
+      <div class="lever" data-spot>
+        <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+        <h3>Lower cost and delivery risk</h3>
+        <ul><li>One design language and specification across sites</li><li>Repeat procurement of furniture, AV and signage</li><li>Lessons from the Hub priced into the Centre and Spoke</li></ul>
+        <div class="kpi-line"><span class="mono">We will measure</span><span>Design fee and variation orders per site</span><span class="tbc">Figure in business case</span></div>
+      </div>
+      <div class="lever" data-spot>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4.5-6"/></svg></span>
+        <h3>Space that earns its keep</h3>
+        <ul><li>Every room bookable, every booking measured</li><li>Building energy dashboards and smart lighting</li><li>Flexible rooms: one studio, four layouts</li></ul>
+        <div class="kpi-line"><span class="mono">We will measure</span><span>Room utilisation and energy per m²</span><span class="tbc">Targets in business case</span></div>
+      </div>
+      <div class="lever" data-spot>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+        <h3>New partnership income</h3>
+        <ul><li>Blue economy incubator and industry engagement hub</li><li>Hybrid conferencing and partner meetings</li><li>Public lectures and community programmes</li></ul>
+        <div class="kpi-line"><span class="mono">We will measure</span><span>Partner income and projects per year</span><span class="tbc">Income model in business case</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 GATES AND RISKS -->
+<section id="gates" class="pg capital" data-chap="capital" aria-roledescription="slide" aria-label="Gated investment pathway and risks">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">The case for capital · gates and risks</span></div>
+    <div class="head wide" data-spot><h2>Funding is released gate by gate.</h2></div>
+    <div class="stackcards">
+      <div class="card">
+        <div class="card-h"><h3>Gated investment pathway</h3><span class="mono">Each gate is a board decision</span></div>
+        <div class="gates">
+          <div class="gate now" data-spot><span class="g">G1</span><b>Concept approval</b><p>Today. Endorse the One UNISA model and the Hub as the first site.</p></div>
+          <div class="gate" data-spot><span class="g">G2</span><b>Detailed design and business case</b><p>Quantity surveyor cost plan, enrolment and utilisation model, partner letters of intent.</p></div>
+          <div class="gate" data-spot><span class="g">G3</span><b>Hub delivery</b><p>Construction funding released only against an approved business case.</p></div>
+          <div class="gate" data-spot><span class="g">G4</span><b>Centre, Mahikeng</b><p>Approved once Hub utilisation data proves the model.</p></div>
+          <div class="gate" data-spot><span class="g">G5</span><b>Spoke and scale up</b><p>Mthatha first, then further Spokes from the same kit of parts.</p></div>
+        </div>
+      </div>
+      <div class="card" id="riskCard" data-spot>
+        <div class="card-h"><h3>Risks the board should expect us to manage</h3><span class="mono">Risk and response</span></div>
+        <dl class="risks">
+          <div><dt>Cost overrun</dt><dd>Fixed kit of parts specification, independent cost plan at every gate, no construction funding before the business case.</dd></div>
+          <div><dt>Low utilisation</dt><dd>Bookable spaces with live utilisation data. The Centre is not approved until the Hub meets agreed targets.</dd></div>
+          <div><dt>Technology ageing</dt><dd>Open standards, a shared backbone managed centrally and technology refresh priced into operating costs.</dd></div>
+          <div><dt>Weak local relevance</dt><dd>Each site is tied to a regional niche and to named industry and community partners before design is final.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 ASK -->
+<section id="ask" class="pg ask" data-chap="ask" aria-roledescription="slide" aria-label="The decision we request">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">The decision we request</span></div>
+    <h2 data-spot>Approve funding to take the Hub through detailed design and a full business case.</h2>
+    <p class="lede" data-spot>This is the first gated phase of One UNISA. It commits the university to evidence, not to construction.</p>
+    <div class="next">
+      <div data-spot><b>A priced cost plan</b><p>Independent quantity surveyor estimate for the Hub, with the Centre and Spoke at order of magnitude.</p></div>
+      <div data-spot><b>An enrolment and utilisation model</b><p>Who will use each space, how often, and what that means for operating cost.</p></div>
+      <div data-spot><b>Partners on paper</b><p>Letters of intent from industry, research and community partners for each niche.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 GALLERY -->
+<section id="gallery" class="pg" data-chap="gallery" aria-roledescription="slide" aria-label="Render gallery">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">Render gallery, revision B</span></div>
+    <div class="head">
+      <h2>See it for yourself.</h2>
+      <p class="lede">Twenty concept renders from revision B, dated 16 October 2026. Filter by site or by type of space and open any image full screen.</p>
+    </div>
+    <div class="filters">
+      <div class="frow" id="fSite"><span class="mono">Site</span></div>
+      <div class="frow" id="fType"><span class="mono">Space</span></div>
+    </div>
+    <p class="count" id="gCount" aria-live="polite"></p>
+    <div class="gal" id="gal" style="margin-top:12px"></div>
+    <div class="credit">
+      <span>Concept design by Inkspired Architects (Pty) Ltd. Johannesburg and Accra.</span>
+      <span>Renders are design concepts and subject to detailed design.</span>
+    </div>
+  </div>
+</section>
+
+</div>
+<div class="dive-flash" id="diveFlash" aria-hidden="true"><div class="hole"><img src="img/d-hub-night.webp" alt="" decoding="async"></div></div>
+</main>
+
+<!-- Player: voiceover, captions and slide controls -->
+<footer class="player" id="player">
+  <div class="wrap">
+    <button class="vo-btn" id="voBtn" type="button" aria-label="Play voiceover"></button>
+    <div class="capbox">
+      <span class="vo-label mono"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span id="voLabel">Voiceover</span></span>
+      <p id="cap" class="sys" aria-live="off"></p>
+      <div class="cueprog" aria-hidden="true"><i id="cueBar"></i></div>
+    </div>
+    <div class="ctl" aria-label="Slide controls">
+      <button type="button" id="dPrev" aria-label="Previous"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3L5 8l5 5"/></svg></button>
+      <span class="pos" id="dPos">01 / 11</span>
+      <button type="button" id="dNext" aria-label="Next"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg></button>
+      <span class="sep wide"></span>
+      <button type="button" id="dCC" aria-label="Captions" aria-pressed="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.5" y="3" width="13" height="10" rx="2"/><path d="M7 6.6a1.8 1.8 0 1 0 0 2.8M12 6.6a1.8 1.8 0 1 0 0 2.8"/></svg></button>
+      <button type="button" id="dSet" aria-label="Voiceover settings" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h7M12 4h2M2 12h2M7 12h7"/><circle cx="10.5" cy="4" r="1.6"/><circle cx="5.5" cy="12" r="1.6"/></svg></button>
+      <button type="button" id="dNotes" class="wide" aria-label="Presenter notes" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2" width="11" height="12" rx="1.5"/><path d="M5 5.5h6M5 8h6M5 10.5h4"/></svg></button>
+      <button type="button" id="dFull" class="wide" aria-label="Full screen"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 6V2h4M14 6V2h-4M2 10v4h4M14 10v4h-4"/></svg></button>
+      <button type="button" id="dHelp" class="wide" aria-label="Keyboard shortcuts" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6"/><path d="M6.3 6.2a1.8 1.8 0 1 1 2.4 1.7c-.5.2-.7.6-.7 1.1M8 11.3v.2"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<div class="pop" id="notes" hidden>
+  <h4 id="nTitle"></h4>
+  <p id="nBody"></p>
+  <p class="take" id="nTake"></p>
+  <p class="keys">Arrows step through slides and stages. Space plays or pauses the voiceover. P presenter view. B black screen.</p>
+</div>
+<div class="pop help" id="help" hidden>
+  <h4>Keyboard</h4>
+  <p><kbd>→</kbd> next &nbsp; <kbd>←</kbd> previous &nbsp; <kbd>Space</kbd> play or pause voiceover</p>
+  <p><kbd>P</kbd> presenter view &nbsp; <kbd>B</kbd> black screen &nbsp; <kbd>F</kbd> full screen</p>
+  <p><kbd>C</kbd> captions &nbsp; <kbd>N</kbd> notes &nbsp; <kbd>G</kbd> gallery</p>
+  <p><kbd>Home</kbd> start &nbsp; <kbd>End</kbd> the ask &nbsp; <kbd>Esc</kbd> close</p>
+  <p class="keys">Swipe or scroll to move between slides. While the voiceover plays, the arrows skip to the next or previous line.</p>
+</div>
+<div class="pop" id="settings" hidden>
+  <h4>Voiceover</h4>
+  <label class="fld" id="voiceFld"><span class="mono">Voice</span><select id="voVoice"></select></label>
+  <label class="fld"><span class="mono">Speed</span>
+    <select id="voRate"><option value="0.9">0.9×</option><option value="1" selected>1×</option><option value="1.1">1.1×</option><option value="1.2">1.2×</option></select>
+  </label>
+  <label class="chk"><input type="checkbox" id="voAuto" checked> Move to the next slide automatically</label>
+  <p class="keys" id="voInfo"></p>
+</div>
+
+<div class="blackout" id="blackout" hidden></div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb-top"><span class="mono" id="lbCount"></span><button class="x" id="lbX" type="button" aria-label="Close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+  <div class="lb-stage" id="lbStage">
+    <button class="arrow l" id="lbL" type="button" aria-label="Previous image"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3L5 8l5 5"/></svg></button>
+    <img id="lbImg" alt="">
+    <button class="arrow r" id="lbR" type="button" aria-label="Next image"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3l5 5-5 5"/></svg></button>
+  </div>
+  <div class="lb-cap"><b id="lbTitle"></b><span class="mono" id="lbMeta"></span></div>
+</div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/Flip.min.js"></script>
+<script src="vendor/SplitText.min.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="js/geo-dots.js"></script>
+<script src="js/voiceover.js"></script>
+<script src="audio/timings.js"></script>
+<script src="js/globe.js"></script>
+<script src="js/deck.js"></script>
+</body>
+</html>
