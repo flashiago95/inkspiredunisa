@@ -17,7 +17,7 @@ import {fileURLToPath} from 'node:url';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const PORT=+((process.argv.find(a=>a.startsWith('--port='))||'').split('=')[1]||8080);
 const TOKEN=crypto.randomBytes(9).toString('base64url');
-const TYPES={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.svg':'image/svg+xml','.woff2':'font/woff2','.mp3':'audio/mpeg','.md':'text/markdown; charset=utf-8','.txt':'text/plain; charset=utf-8'};
+const TYPES={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg','.svg':'image/svg+xml','.woff2':'font/woff2','.mp3':'audio/mpeg','.mp4':'video/mp4','.md':'text/markdown; charset=utf-8','.txt':'text/plain; charset=utf-8'};
 const lan=Object.values(os.networkInterfaces()).flat().find(n=>n&&n.family==='IPv4'&&!n.internal);
 const HOST=lan?lan.address:'localhost';
 const phoneUrl=`http://${HOST}:${PORT}/remote.html?t=${TOKEN}`;
@@ -57,5 +57,5 @@ http.createServer(async(req,res)=>{
     res.writeHead(200,{'Content-Type':type,'Content-Length':st.size,'Accept-Ranges':'bytes'});fs.createReadStream(file).pipe(res);
   });
 }).listen(PORT,'0.0.0.0',()=>{
-  console.log(`\n  One UNISA deck:  http://localhost:${PORT}\n  Phone remote:    ${phoneUrl}\n\n  Open the deck on this laptop, press Present, and scan the QR code in the presenter view.\n  Press Ctrl+C to stop.\n`);
+  console.log(`\n  UNISA Global deck:  http://localhost:${PORT}\n  Phone remote:    ${phoneUrl}\n\n  Open the deck on this laptop, press Present, and scan the QR code in the presenter view.\n  Press Ctrl+C to stop.\n`);
 });

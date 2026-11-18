@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>One UNISA Global Model</title>
+<title>UNISA Global Model</title>
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="stylesheet" href="fonts/fonts.css">
@@ -15,13 +15,15 @@
   <div class="wrap">
     <a class="brand" href="#africa" data-go="africa" aria-label="Inkspired Architects, back to the start">
       <svg viewBox="0 0 100 111" aria-hidden="true"><circle cx="49.95" cy="60.94" r="35.36" fill="none" stroke="#fff" stroke-width="28.98"/><circle cx="87.79" cy="6.99" r="7.04" fill="#fff"/></svg>
-      <img src="img/inkspired-wordmark.png" alt="inkspired" width="796" height="145">
+      <img src="img/brand/inkspired-wordmark-white.png" alt="inkspired" width="792" height="141">
     </a>
     <nav class="nav" aria-label="Chapters">
+      <a href="#network" data-go="network">Network</a>
       <a href="#question" data-go="question">Question</a>
       <a href="#model" data-go="model">Model</a>
       <a href="#journey" data-go="journey">Journey</a>
       <a href="#sites" data-go="sites">Sites</a>
+      <a href="#materials" data-go="materials">Materials</a>
       <a href="#capital" data-go="capital">Case for capital</a>
       <a href="#ask" data-go="ask">The ask</a>
       <a href="#gallery" data-go="gallery">Gallery</a>
@@ -32,7 +34,7 @@
 </header>
 <div class="prog" aria-hidden="true"><i id="progBar"></i></div>
 
-<main class="deck" id="deck" aria-roledescription="slide deck" aria-label="One UNISA">
+<main class="deck" id="deck" aria-roledescription="slide deck" aria-label="UNISA Global">
 <div class="track" id="track">
 
 <!-- 00 AFRICA, AT A DISTANCE -->
@@ -46,7 +48,7 @@
     <div class="wrap">
       <div class="pro-step" data-ph="0">
         <span class="mono pro-kicker"><b></b>Inkspired Architects for the University of South Africa</span>
-        <h1>One UNISA</h1>
+        <h1>UNISA Global</h1>
         <p>A connected learning ecosystem for a continent that studies at a distance.</p>
         <button class="cta" id="heroCta" type="button"><i><svg viewBox="0 0 16 16" fill="#fff"><path d="M3 1.5l11 6.5-11 6.5z"/></svg></i><span>Play the narrated tour</span><small id="ctaMin"></small></button>
       </div>
@@ -56,7 +58,7 @@
         <p>Students study alone: at kitchen tables, on phones, far from support, laboratories and employers.</p>
       </div>
       <div class="pro-step" data-ph="2">
-        <span class="mono pro-kicker"><b></b>One UNISA</span>
+        <span class="mono pro-kicker"><b></b>UNISA Global</span>
         <h1>Now, a front door.</h1>
         <p>Three sites where their regions’ economies already live, joined by one digital backbone from the main campus.</p>
       </div>
@@ -64,25 +66,27 @@
   </div>
   <div class="pro-foot">
     <div class="wrap">
-      <div class="pro-dots" id="proDots"><button type="button" data-ph="0" aria-label="One UNISA"></button><button type="button" data-ph="1" aria-label="Africa, at a distance"></button><button type="button" data-ph="2" aria-label="A front door"></button></div>
+      <div class="pro-dots" id="proDots"><button type="button" data-ph="0" aria-label="UNISA Global"></button><button type="button" data-ph="1" aria-label="Africa, at a distance"></button><button type="button" data-ph="2" aria-label="A front door"></button></div>
       <span class="mono pro-note">Illustrative. Points of light stand for distance learners, not actual locations.</span>
     </div>
   </div>
 </section>
 
 <!-- 01 VISION -->
-<section id="vision" class="pg hero-pg" data-chap="vision" aria-roledescription="slide" aria-label="One UNISA">
+<section id="vision" class="pg hero-pg" data-chap="vision" aria-roledescription="slide" aria-label="UNISA Global, three sites">
   <div class="hero" id="hero">
     <svg class="hero-ring" viewBox="0 0 100 111" aria-hidden="true"><circle class="r" pathLength="100" cx="49.95" cy="60.94" r="35.36" fill="none" stroke="#fff" stroke-width="28.98"/><circle class="d" cx="87.79" cy="6.99" r="7.04" fill="#fff"/></svg>
     <div class="slide on" style="--acc:var(--hub)" data-i="0">
-      <div class="px"><img src="img/d-hub-night.webp" alt="The Hub, Cape Town Marine Studies, at night on the waterfront with Table Mountain behind" width="1600" height="802"></div>
+      <div class="px"><img src="img/h-night.webp" alt="The Hub, Cape Town Marine Studies, at night on the waterfront with Table Mountain behind" width="1536" height="1024"></div>
     </div>
     <div class="slide" style="--acc:var(--centre)" data-i="1">
-      <div class="px"><img src="img/d-cen-exterior.webp" alt="The Centre, Mahikeng Mining Knowledge Centre, in afternoon light" width="1600" height="900"></div>
+      <div class="px"><img src="img/c-exterior.webp" alt="The Centre, Mahikeng Mining Knowledge Hub, in afternoon light" width="1670" height="942"></div>
     </div>
     <div class="slide" style="--acc:var(--spoke)" data-i="2">
-      <div class="px"><img src="img/g-spk-exterior.webp" alt="The Spoke, Mthatha, street frontage at golden hour" width="1600" height="903"></div>
+      <div class="px"><img src="img/s-exterior.webp" alt="The Spoke, Mthatha, street frontage at golden hour" width="1669" height="942"></div>
     </div>
+    <canvas class="livec" id="heroGL" aria-hidden="true"></canvas>
+    <div class="hero-shade" aria-hidden="true"></div>
     <div class="hero-copy" data-spot>
       <div class="wrap">
         <div id="heroCopy" aria-live="polite"></div>
@@ -110,6 +114,36 @@
   </div>
 </section>
 
+<!-- NETWORK -->
+<section id="network" class="pg netpg" data-chap="network" aria-roledescription="slide" aria-label="The UNISA Global network">
+  <div class="wrap">
+    <div class="op-grid">
+      <div class="op-map" id="opMap" role="img" aria-label="Map of South Africa linking Cape Town, Mahikeng and Mthatha in one network"></div>
+      <div class="op-side">
+        <div class="op-head"><span class="mono">UNISA Global Model</span><h2>UNISA Global. Three sites. One network.</h2></div>
+        <div class="legend2">
+          <div class="lg2" data-spot><i style="background:#2f7fd6"></i><div><b>HUB</b><span><em class="cnt2" data-to="5000">5 000</em> m²</span></div></div>
+          <div class="lg2" data-spot><i style="background:#c8692e"></i><div><b>CENTRE</b><span><em class="cnt2" data-to="2200">2 200</em> m²</span></div></div>
+          <div class="lg2" data-spot><i style="background:#e2b23a"></i><div><b>SPOKE</b><span><em class="cnt2" data-to="700">700</em> m²</span></div></div>
+          <div class="lg2 tot" data-spot><i style="background:#e3241b"></i><div><b>Total</b><span><em class="cnt2" data-to="7900">7 900</em> m²</span></div></div>
+        </div>
+        <button class="replay" id="opReplay" type="button">Replay</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREFACE -->
+<section id="preface" class="pg pref" data-chap="network" aria-roledescription="slide" aria-label="From the preface by the Principal and Vice-Chancellor">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">From the preface by the Principal and Vice-Chancellor</span></div>
+    <span class="qm" aria-hidden="true">“</span>
+    <blockquote id="vcq" data-spot><span class="ln">UNISA Global represents such a moment of reimagination.</span> <strong class="ln">It is not a departure from UNISA’s identity, but a deepening of it.</strong></blockquote>
+    <div class="pref-att" data-spot><span class="u"><img src="img/unisa-logo.png" alt="UNISA"></span><span>Principal and Vice-Chancellor, University of South Africa</span></div>
+    <p class="more" data-spot>The preface describes UNISA as “one institution with multiple sites of delivery, connected through common standards, shared systems” across Hubs, Centres and Spokes. This proposal gives that vision a physical form.</p>
+  </div>
+</section>
+
 <!-- 02 QUESTION -->
 <section id="question" class="pg" data-chap="question" aria-roledescription="slide" aria-label="The question for this board">
   <div class="wrap">
@@ -130,7 +164,7 @@
     <div class="model">
       <div class="mcol">
         <div class="head" data-spot>
-          <h2>One UNISA. Three sites. One system.</h2>
+          <h2>UNISA Global. Three sites. One system.</h2>
           <p class="lede">Each site anchors a catalytic niche its region already lives by, and is sized to the community it serves. All three share one design language and one digital backbone run from the main campus.</p>
         </div>
         <div class="tiers arm-target" id="tiers" data-spot>
@@ -190,6 +224,39 @@
       <div class="tabs sm" role="tablist" aria-label="Sites" data-tabs></div>
     </div>
     <div class="site-low grow" id="briefPanel" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- MATERIALS: FACADE STUDY -->
+<section id="materials" class="pg" data-chap="materials" aria-roledescription="slide" aria-label="Material palette">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">Material palette</span></div>
+    <div class="head mhead" data-spot>
+      <h2>Built from the ground it stands on.</h2>
+      <p class="lede">Each site carries a palette chosen for its climate and its landscape.</p>
+    </div>
+    <div class="study" id="study" data-spot>
+      <figure><img src="img/h-waterfront.webp" alt="The Hub, Cape Town, waterfront facade"><div class="slens" id="slens"></div>
+        <button class="hs" type="button" data-i="0" style="left:36.1%;top:67.9%" aria-label="Concrete podium"></button>
+        <button class="hs" type="button" data-i="1" style="left:59%;top:38.9%" aria-label="Pigmented plaster"></button>
+        <button class="hs" type="button" data-i="2" style="left:21.9%;top:30.6%" aria-label="Glazing and vertical fins"></button>
+      </figure>
+      <div class="side"><span class="mono">Material study · The Hub, Cape Town</span><h3>Select a point on the facade</h3>
+        <div class="tabs2" id="stTabs"><button type="button" data-i="0">Concrete</button><button type="button" data-i="1">Pigmented plaster</button><button type="button" data-i="2">Glazing and fins</button></div>
+        <div class="why" id="stWhy"></div><p class="mono" style="font-size:10.5px">Indicative only, subject to detailed design</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIALS: PALETTES -->
+<section id="palette" class="pg" data-chap="materials" aria-roledescription="slide" aria-label="Material palettes by site">
+  <div class="wrap">
+    <div class="sheet"><span class="n"></span><span class="t">Material palette · three sites</span></div>
+    <div class="head wide" data-spot>
+      <h2>A palette for each landscape.</h2>
+      <p class="lede">Robust, low maintenance surfaces that age well, so the buildings stay dignified for decades with modest upkeep.</p>
+    </div>
+    <div class="pal arm-target" id="pal"></div>
   </div>
 </section>
 
@@ -267,7 +334,7 @@
       <div class="card">
         <div class="card-h"><h3>Gated investment pathway</h3><span class="mono">Each gate is a board decision</span></div>
         <div class="gates">
-          <div class="gate now" data-spot><span class="g">G1</span><b>Concept approval</b><p>Today. Endorse the One UNISA model and the Hub as the first site.</p></div>
+          <div class="gate now" data-spot><span class="g">G1</span><b>Concept approval</b><p>Today. Endorse the UNISA Global model and the Hub as the first site.</p></div>
           <div class="gate" data-spot><span class="g">G2</span><b>Detailed design and business case</b><p>Quantity surveyor cost plan, enrolment and utilisation model, partner letters of intent.</p></div>
           <div class="gate" data-spot><span class="g">G3</span><b>Hub delivery</b><p>Construction funding released only against an approved business case.</p></div>
           <div class="gate" data-spot><span class="g">G4</span><b>Centre, Mahikeng</b><p>Approved once Hub utilisation data proves the model.</p></div>
@@ -292,7 +359,7 @@
   <div class="wrap">
     <div class="sheet"><span class="n"></span><span class="t">The decision we request</span></div>
     <h2 data-spot>Approve funding to take the Hub through detailed design and a full business case.</h2>
-    <p class="lede" data-spot>This is the first gated phase of One UNISA. It commits the university to evidence, not to construction.</p>
+    <p class="lede" data-spot>This is the first gated phase of UNISA Global. It commits the university to evidence, not to construction.</p>
     <div class="next">
       <div data-spot><b>A priced cost plan</b><p>Independent quantity surveyor estimate for the Hub, with the Centre and Spoke at order of magnitude.</p></div>
       <div data-spot><b>An enrolment and utilisation model</b><p>Who will use each space, how often, and what that means for operating cost.</p></div>
@@ -304,10 +371,10 @@
 <!-- 11 GALLERY -->
 <section id="gallery" class="pg" data-chap="gallery" aria-roledescription="slide" aria-label="Render gallery">
   <div class="wrap">
-    <div class="sheet"><span class="n"></span><span class="t">Render gallery, revision B</span></div>
+    <div class="sheet"><span class="n"></span><span class="t">Render gallery, final set</span></div>
     <div class="head">
       <h2>See it for yourself.</h2>
-      <p class="lede">Twenty concept renders from revision B, dated 16 October 2026. Filter by site or by type of space and open any image full screen.</p>
+      <p class="lede">The final concept renders for all three sites. Filter by site or by type of space and open any image full screen.</p>
     </div>
     <div class="filters">
       <div class="frow" id="fSite"><span class="mono">Site</span></div>
@@ -316,14 +383,14 @@
     <p class="count" id="gCount" aria-live="polite"></p>
     <div class="gal" id="gal" style="margin-top:12px"></div>
     <div class="credit">
-      <span>Concept design by Inkspired Architects (Pty) Ltd. Johannesburg and Accra.</span>
+      <span class="credit-logo"><img src="img/brand/inkspired-logo-white.png" alt="inkspired" width="987" height="1397">Concept design by Inkspired Architects (Pty) Ltd. Johannesburg and Accra.</span>
       <span>Renders are design concepts and subject to detailed design.</span>
     </div>
   </div>
 </section>
 
 </div>
-<div class="dive-flash" id="diveFlash" aria-hidden="true"><div class="hole"><img src="img/d-hub-night.webp" alt="" decoding="async"></div></div>
+<div class="dive-flash" id="diveFlash" aria-hidden="true"><div class="hole"><img src="img/h-night.webp" alt="" decoding="async"></div></div>
 </main>
 
 <!-- Player: voiceover, captions and slide controls -->
@@ -365,7 +432,6 @@
 </div>
 <div class="pop" id="settings" hidden>
   <h4>Voiceover</h4>
-  <label class="fld" id="voiceFld"><span class="mono">Voice</span><select id="voVoice"></select></label>
   <label class="fld"><span class="mono">Speed</span>
     <select id="voRate"><option value="0.9">0.9×</option><option value="1" selected>1×</option><option value="1.1">1.1×</option><option value="1.2">1.2×</option></select>
   </label>
@@ -392,8 +458,10 @@
 <script src="vendor/three.min.js"></script>
 <script src="js/geo-dots.js"></script>
 <script src="js/voiceover.js"></script>
-<script src="audio/timings.js"></script>
 <script src="js/globe.js"></script>
+<script src="js/live.js"></script>
+<script src="js/netmap.js"></script>
+<script src="js/netmap-data.js"></script>
 <script src="js/deck.js"></script>
 </body>
 </html>

@@ -1,101 +1,264 @@
-/* The narrated tour: every spoken line, slide by slide, in the order it plays.
-   Each line is paired with its on-screen cue in deck.js by position, so keep the order when editing.
-   After changing any wording, run tools/make-voiceover.mjs again: it re-records only the lines that changed. */
-window.VO_LINES={
- africa:[
-  'For generations, UNISA has taught Africa at a distance.',
-  'Its students learn alone, at kitchen tables and on phones, far from support, from laboratories, and from the people who will employ them.',
-  'One UNISA gives that distance a front door.',
-  'Three sites, each built where its region’s economy already lives, joined by one digital backbone from the main campus in Pretoria.',
-  'It begins on the Cape Town waterfront.'
- ],
- vision:[
-  'This is One UNISA: a connected learning ecosystem, designed by Inkspired Architects.',
-  'The Hub: 5,000 square metres for marine studies and the blue economy.',
-  'In Mahikeng, the Centre: 2,200 square metres for mining and geoscience, built where the economy already lives.',
-  'And in Mthatha, the Spoke: 700 square metres for pharmaceutical and health studies, a short walk from the community it serves.',
-  'Three connected sites. 7,900 square metres. Three regional niches. One design language and one digital backbone.'
- ],
- question:[
-  'Which brings us to the question for this board. What if that distance had a front door?',
-  'The first gap is support. Distance students study at kitchen tables and on phones. When they fall behind, nobody sees it until results are published.',
-  'The second gap is research. Marine science, geoscience and pharmacy need equipment, data and supervision that a screen alone cannot provide.',
-  'The third gap is industry. Employers, ports, mines and clinics need somewhere to meet the graduates they will hire, and the research they will fund.'
- ],
- model:[
-  'Our answer is One UNISA: three sites, one system. Each site anchors a niche its region already lives by.',
-  'The Hub in Cape Town is the flagship and network anchor, at 5,000 square metres.',
-  'The Centre in Mahikeng is a regional knowledge centre of 2,200 square metres.',
-  'The Spoke in Mthatha is a community access point of 700 square metres.',
-  'Each site is sized to the community it serves, and all three plug into one digital backbone, run from the main campus in Pretoria.'
- ],
- journey:[
-  'The buildings exist to deliver a service model. Follow one student through eight stages, and watch the system act before the student has to ask.',
-  'Discover. A new student asks: where do I go now? Enrolment triggers a welcome in their own language, with the nearest site and a bookable orientation slot.',
-  'Arrive. Smart access recognises the booking, and self-help kiosks free staff to focus on the student in front of them.',
-  'Support. When a student misses submissions or goes quiet online, an early alert is raised, and an adviser books a consultation before the student asks.',
-  'Learn. The app suggests a free seat or study room near the student’s next session, with power and data at every seat.',
-  'Collaborate. Hybrid studios join group members across four provinces, with tracking cameras, live captions and recording built in.',
-  'Research. Postgraduates are matched to lab time, datasets and supervisors, and progress is visible to both sides.',
-  'Connect. Industry partners post live challenges through the incubator, and students pitch for partner projects.',
-  'And belong. Public lectures and alumni mentoring keep graduates connected to the next intake.',
-  'Confidence rises at every stage, and every stage has a number the university can track.'
- ],
- sites:[
-  'Every square metre has a job. The Hub sits on the Cape Town waterfront: four levels, anchored in marine studies and the blue economy.',
-  'Students arrive into a lobby with a multilingual welcome wall, self-help kiosks and smart access.',
-  'Hybrid studios bring remote peers into the room, with tracking cameras and live captions.',
-  'And an operations centre monitors space use and energy across the building.',
-  'The Centre in Mahikeng rises over two levels, behind a facade patterned on the regional landscape.',
-  'Inside, Sol Plaatje artwork forms the civic welcome, and a collaboration studio reconfigures into four layouts.',
-  'The Spoke in Mthatha is a single level, with language choice at the welcome screen and live expert support from across the network.',
-  'Its community forecourt takes learning outdoors, under a shaded canopy.'
- ],
- brief:[
-  'The brief is specific enough to cost. At the Hub, eleven named zones account for 4,530 of the 5,000 square metres.',
-  'The largest is the marine learning commons, at 800 square metres.',
-  'The zoning plans show where every zone sits, floor by floor.',
-  'At the Centre, eight zones account for 1,730 square metres, led by the learning commons and digital laboratories.',
-  'At the Spoke, five zones account for 625 square metres.',
-  'At every site, the balance for circulation and services is declared openly, and will be confirmed in detailed design.'
- ],
- capital:[
-  'Now, the case for capital. Design once, deploy many, and release capital against evidence.',
-  'Across the three sites, 6,885 of the 7,900 stated square metres are already allocated to named functions. That is 87% allocation efficiency.',
-  'The space mix shows how each site balances learning, research, student support and administration.',
-  'And the same modules repeat at every scale, so furniture, technology, wayfinding and finishes are specified once and procured across the network.'
- ],
- levers:[
-  'Three levers make the case, and each one comes with a measure, with targets set in the business case.',
-  'First, lower cost and delivery risk. One specification and repeat procurement, with lessons from the Hub priced into the Centre and the Spoke.',
-  'Second, space that earns its keep. Every room is bookable, every booking is measured, and energy is tracked per square metre.',
-  'Third, new partnership income: a blue economy incubator, hybrid conferencing, and public lectures and community programmes.'
- ],
- gates:[
-  'Funding is released gate by gate, and each gate is a board decision. Gate one is today: endorse the One UNISA model, and the Hub as the first site.',
-  'Gate two delivers the detailed design and the business case.',
-  'Gate three releases construction funding for the Hub, but only against an approved business case.',
-  'Gate four approves the Centre in Mahikeng, once Hub utilisation data proves the model.',
-  'And gate five brings the Spoke in Mthatha, then further Spokes from the same kit of parts.',
-  'We also name the risks, from cost overrun and low utilisation to ageing technology and weak local relevance, and how the model responds to each.'
- ],
- ask:[
-  'So, the decision we request. Approve funding to take the Hub through detailed design and a full business case.',
-  'This is the first gated phase of One UNISA. It commits the university to evidence, not to construction.',
-  'It returns to this board with three things: a priced cost plan, an enrolment and utilisation model, and partners on paper.'
- ],
- gallery:[
-  'Finally, see it for yourself. Twenty concept renders from revision B, ready to filter by site or by type of space.',
-  'Thank you.'
- ]
+/* The narrated tour: eleven recorded sections in vo/, one MP3 each.
+   VO_TRACKS is each recording's timing table: every line's start and end time in seconds, and its words.
+   VO_PLAN places the recorded lines on the deck's slides, in the order they play, as [recording, line number].
+   A line can play on a different slide from the rest of its recording: the last line of "sites" plays on the brief,
+   and "capital" is spread across the capital, levers and gates slides.
+   If a recording is re-made, update its times here so the captions and visual cues stay in step. */
+window.VO_TRACKS={
+ "opening": {
+  "dur": 31.5,
+  "lines": [
+   [
+    0.35,
+    4.447,
+    "For generations, UNISA has taught Africa at a distance."
+   ],
+   [
+    4.897,
+    13.86,
+    "Its students learn alone, at kitchen tables and on phones, far from support, from laboratories, and from the people who will employ them."
+   ],
+   [
+    14.31,
+    17.771,
+    "UNISA Global gives that distance a front door."
+   ],
+   [
+    18.221,
+    27.692,
+    "Three sites, each built where its region's economy already lives, joined by one digital backbone from the main campus in Pretoria."
+   ],
+   [
+    28.142,
+    31.05,
+    "It begins on the Cape Town waterfront."
+   ]
+  ]
+ },
+ "vision": {
+  "dur": 14.3,
+  "lines": [
+   [
+    0.35,
+    4.683,
+    "The Hub in Cape Town, for marine studies and the blue economy."
+   ],
+   [
+    5.133,
+    9.041,
+    "The Centre in Mahikeng, for mining and geoscience."
+   ],
+   [
+    9.491,
+    13.845,
+    "And the Spoke in Mthatha, for pharmaceutical and health studies."
+   ]
+  ]
+ },
+ "network": {
+  "dur": 16.32,
+  "lines": [
+   [
+    0.35,
+    6.775,
+    "Together, seven thousand nine hundred square metres of learning, research and partnership space."
+   ],
+   [
+    7.225,
+    15.872,
+    "Five thousand at the Hub, two thousand two hundred at the Centre, and seven hundred at the Spoke, each sized to the community it serves."
+   ]
+  ]
+ },
+ "preface": {
+  "dur": 18.38,
+  "lines": [
+   [
+    0.35,
+    4.259,
+    "In the words of UNISA's Principal and Vice-Chancellor."
+   ],
+   [
+    4.709,
+    13.819,
+    "UNISA Global represents such a moment of reimagination. It is not a departure from UNISA's identity, but a deepening of it."
+   ],
+   [
+    14.269,
+    17.928,
+    "This proposal gives that vision a physical form."
+   ]
+  ]
+ },
+ "question": {
+  "dur": 12.41,
+  "lines": [
+   [
+    0.35,
+    4.27,
+    "What our students lack is not content. It is a place."
+   ],
+   [
+    4.72,
+    11.957,
+    "A place to be supported, to do research that needs a laboratory, and to meet the industries that will employ them."
+   ]
+  ]
+ },
+ "model": {
+  "dur": 19.02,
+  "lines": [
+   [
+    0.35,
+    4.896,
+    "Each site anchors an economy its region already lives by."
+   ],
+   [
+    5.346,
+    12.938,
+    "The ocean economy in Cape Town. Mining and geoscience in Mahikeng. Health sciences in Mthatha."
+   ],
+   [
+    13.388,
+    18.572,
+    "One design language, and one digital backbone run from the main campus."
+   ]
+  ]
+ },
+ "journey": {
+  "dur": 28.5,
+  "lines": [
+   [
+    0.35,
+    4.485,
+    "Every space serves a student journey that reaches out first."
+   ],
+   [
+    4.935,
+    7.532,
+    "Arrive, and the student is expected."
+   ],
+   [
+    7.982,
+    12.008,
+    "Fall behind, and an adviser reaches out before they ask."
+   ],
+   [
+    12.458,
+    16.732,
+    "Learn, collaborate and research in spaces booked in seconds."
+   ],
+   [
+    17.182,
+    20.053,
+    "Connect with the partners who will employ them."
+   ],
+   [
+    20.503,
+    28.05,
+    "And belong, returning as mentors to the next intake. Every stage has a number the university can track."
+   ]
+  ]
+ },
+ "sites": {
+  "dur": 19.65,
+  "lines": [
+   [
+    0.35,
+    6.028,
+    "The Hub is the flagship. Five thousand square metres on the Cape Town waterfront."
+   ],
+   [
+    6.478,
+    10.334,
+    "The Centre brings the same standard inland, to Mahikeng."
+   ],
+   [
+    10.784,
+    15.034,
+    "The Spoke takes UNISA into the community in Mthatha."
+   ],
+   [
+    15.484,
+    19.195,
+    "In every brief, each square metre has a named purpose."
+   ]
+  ]
+ },
+ "materials": {
+  "dur": 31.69,
+  "lines": [
+   [
+    0.35,
+    3.134,
+    "The architecture is in the materials."
+   ],
+   [
+    3.584,
+    9.346,
+    "At the Hub, concrete brings thermal mass, and stands up to salt air on the waterfront."
+   ],
+   [
+    9.796,
+    15.517,
+    "Pigmented plaster carries its colour through the finish, with far less need to repaint."
+   ],
+   [
+    15.967,
+    21.769,
+    "Full height glazing opens every floor to the harbour, while vertical fins shade the glass."
+   ],
+   [
+    22.219,
+    31.24,
+    "At the Centre, brick, ochre plaster and stone. At the Spoke, natural stone and warm plaster. Chosen once, and built to last."
+   ]
+  ]
+ },
+ "capital": {
+  "dur": 34.4,
+  "lines": [
+   [
+    0.35,
+    3.687,
+    "For the finance committee, the logic is disciplined."
+   ],
+   [
+    4.137,
+    12.958,
+    "Design once and deploy many. One repeatable kit of parts lowers design cost and delivery risk at every new site."
+   ],
+   [
+    13.408,
+    20.181,
+    "Smart building systems measure utilisation and energy, so every square metre earns its keep."
+   ],
+   [
+    20.631,
+    27.904,
+    "Each site opens new partnership income, from industry research to conferencing and community programmes."
+   ],
+   [
+    28.354,
+    33.949,
+    "And capital is released gate by gate, only against evidence from the gate before."
+   ]
+  ]
+ },
+ "ask": {
+  "dur": 16.07,
+  "lines": [
+   [
+    0.35,
+    10.423,
+    "We ask the board to approve funding to take the Hub through detailed design and a full business case, as the first gated phase of UNISA Global."
+   ],
+   [
+    10.873,
+    15.619,
+    "UNISA Global. Connected. Present. Ready for Africa's future."
+   ]
+  ]
+ }
 };
-
-/* How names are said. Captions keep the written form; only the voice uses these.
-   Each rule is [pattern, flags, replacement] and applies word by word. */
-window.VO_PRON=[
- ['\\bUNISA\\b','g','Unisa'],
- ['Mthatha','g','Umtata'],
- ['Plaatje','g','Plaakyee'],
- ['self-help','g','self help'],
- ['(\\d)%','g','$1 percent']
-];
+window.VO_PLAN={"africa":[["opening",0],["opening",1],["opening",2],["opening",3],["opening",4]],"vision":[["vision",0],["vision",1],["vision",2]],"network":[["network",0],["network",1]],"preface":[["preface",0],["preface",1],["preface",2]],"question":[["question",0],["question",1]],"model":[["model",0],["model",1],["model",2]],"journey":[["journey",0],["journey",1],["journey",2],["journey",3],["journey",4],["journey",5]],"sites":[["sites",0],["sites",1],["sites",2]],"brief":[["sites",3]],"materials":[["materials",0],["materials",1],["materials",2],["materials",3]],"palette":[["materials",4]],"capital":[["capital",0],["capital",1]],"levers":[["capital",2],["capital",3]],"gates":[["capital",4]],"ask":[["ask",0],["ask",1]],"gallery":[]};

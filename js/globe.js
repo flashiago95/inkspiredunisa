@@ -1,4 +1,4 @@
-/* Opening globe: Africa at a distance, then the One UNISA network.
+/* Opening globe: Africa at a distance, then the UNISA Global network.
    Drawn with three.js. createGlobe returns null when WebGL is unavailable, and the deck shows a still image instead.
    Phases: 0 Africa, 1 distance learners scattered across the continent, 2 the three front doors and the shared backbone.
    dive() flies the camera into the Cape Town waterfront.

@@ -1,131 +1,124 @@
-# One UNISA: voiceover script
+# UNISA Global: voiceover script
 
-62 lines, about 1078 words and 6,484 characters (roughly 7 minutes).
+The narrated tour plays eleven recorded sections from `vo/`, about 4 minutes in all. Each line below plays on the slide it is listed under, from its start to its end time in that recording. The times and words come from `js/voiceover.js` (VO_TRACKS and VO_PLAN), which the deck reads; this file is generated from it for reading and review.
 
-The words live in `js/voiceover.js`; edit them there. Each line is timed to what appears on screen, and some lines also trigger changes on a particular word (for example the three front doors appear on the word "front").
-
-To record the voice, run `tools/make-voiceover.mjs` (see README.md). It records every line with ElevenLabs, saves each file under the name shown below, and writes the word timings the captions and word cues need.
-
-Pronunciation: UNISA is "you-NEE-sa", Mthatha is "um-TAH-tah", Sol Plaatje is "sol PLAA-kee".
+If a section is re-recorded, update its line times in `js/voiceover.js` so the captions and on-screen cues stay in step.
 
 ## 01 · Africa, at a distance
 
-| File | Line |
-| --- | --- |
-| `audio/africa-01.mp3` | For generations, UNISA has taught Africa at a distance. |
-| `audio/africa-02.mp3` | Its students learn alone, at kitchen tables and on phones, far from support, from laboratories, and from the people who will employ them. |
-| `audio/africa-03.mp3` | One UNISA gives that distance a front door. |
-| `audio/africa-04.mp3` | Three sites, each built where its region’s economy already lives, joined by one digital backbone from the main campus in Pretoria. |
-| `audio/africa-05.mp3` | It begins on the Cape Town waterfront. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/opening.mp3` | 0:00.3–0:04.4 | For generations, UNISA has taught Africa at a distance. |
+| `vo/opening.mp3` | 0:04.9–0:13.9 | Its students learn alone, at kitchen tables and on phones, far from support, from laboratories, and from the people who will employ them. |
+| `vo/opening.mp3` | 0:14.3–0:17.8 | UNISA Global gives that distance a front door. |
+| `vo/opening.mp3` | 0:18.2–0:27.7 | Three sites, each built where its region's economy already lives, joined by one digital backbone from the main campus in Pretoria. |
+| `vo/opening.mp3` | 0:28.1–0:31.1 | It begins on the Cape Town waterfront. |
 
-## 02 · One UNISA
+## 02 · UNISA Global, three sites
 
-| File | Line |
-| --- | --- |
-| `audio/vision-01.mp3` | This is One UNISA: a connected learning ecosystem, designed by Inkspired Architects. |
-| `audio/vision-02.mp3` | The Hub: 5,000 square metres for marine studies and the blue economy. |
-| `audio/vision-03.mp3` | In Mahikeng, the Centre: 2,200 square metres for mining and geoscience, built where the economy already lives. |
-| `audio/vision-04.mp3` | And in Mthatha, the Spoke: 700 square metres for pharmaceutical and health studies, a short walk from the community it serves. |
-| `audio/vision-05.mp3` | Three connected sites. 7,900 square metres. Three regional niches. One design language and one digital backbone. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/vision.mp3` | 0:00.3–0:04.7 | The Hub in Cape Town, for marine studies and the blue economy. |
+| `vo/vision.mp3` | 0:05.1–0:09.0 | The Centre in Mahikeng, for mining and geoscience. |
+| `vo/vision.mp3` | 0:09.5–0:13.8 | And the Spoke in Mthatha, for pharmaceutical and health studies. |
 
-## 03 · The question for this board
+## 03 · The UNISA Global network
 
-| File | Line |
-| --- | --- |
-| `audio/question-01.mp3` | Which brings us to the question for this board. What if that distance had a front door? |
-| `audio/question-02.mp3` | The first gap is support. Distance students study at kitchen tables and on phones. When they fall behind, nobody sees it until results are published. |
-| `audio/question-03.mp3` | The second gap is research. Marine science, geoscience and pharmacy need equipment, data and supervision that a screen alone cannot provide. |
-| `audio/question-04.mp3` | The third gap is industry. Employers, ports, mines and clinics need somewhere to meet the graduates they will hire, and the research they will fund. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/network.mp3` | 0:00.3–0:06.8 | Together, seven thousand nine hundred square metres of learning, research and partnership space. |
+| `vo/network.mp3` | 0:07.2–0:15.9 | Five thousand at the Hub, two thousand two hundred at the Centre, and seven hundred at the Spoke, each sized to the community it serves. |
 
-## 04 · The model
+## 04 · From the preface by the Principal and Vice-Chancellor
 
-| File | Line |
-| --- | --- |
-| `audio/model-01.mp3` | Our answer is One UNISA: three sites, one system. Each site anchors a niche its region already lives by. |
-| `audio/model-02.mp3` | The Hub in Cape Town is the flagship and network anchor, at 5,000 square metres. |
-| `audio/model-03.mp3` | The Centre in Mahikeng is a regional knowledge centre of 2,200 square metres. |
-| `audio/model-04.mp3` | The Spoke in Mthatha is a community access point of 700 square metres. |
-| `audio/model-05.mp3` | Each site is sized to the community it serves, and all three plug into one digital backbone, run from the main campus in Pretoria. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/preface.mp3` | 0:00.3–0:04.3 | In the words of UNISA's Principal and Vice-Chancellor. |
+| `vo/preface.mp3` | 0:04.7–0:13.8 | UNISA Global represents such a moment of reimagination. It is not a departure from UNISA's identity, but a deepening of it. |
+| `vo/preface.mp3` | 0:14.3–0:17.9 | This proposal gives that vision a physical form. |
 
-## 05 · Student experience
+## 05 · The question for this board
 
-| File | Line |
-| --- | --- |
-| `audio/journey-01.mp3` | The buildings exist to deliver a service model. Follow one student through eight stages, and watch the system act before the student has to ask. |
-| `audio/journey-02.mp3` | Discover. A new student asks: where do I go now? Enrolment triggers a welcome in their own language, with the nearest site and a bookable orientation slot. |
-| `audio/journey-03.mp3` | Arrive. Smart access recognises the booking, and self-help kiosks free staff to focus on the student in front of them. |
-| `audio/journey-04.mp3` | Support. When a student misses submissions or goes quiet online, an early alert is raised, and an adviser books a consultation before the student asks. |
-| `audio/journey-05.mp3` | Learn. The app suggests a free seat or study room near the student’s next session, with power and data at every seat. |
-| `audio/journey-06.mp3` | Collaborate. Hybrid studios join group members across four provinces, with tracking cameras, live captions and recording built in. |
-| `audio/journey-07.mp3` | Research. Postgraduates are matched to lab time, datasets and supervisors, and progress is visible to both sides. |
-| `audio/journey-08.mp3` | Connect. Industry partners post live challenges through the incubator, and students pitch for partner projects. |
-| `audio/journey-09.mp3` | And belong. Public lectures and alumni mentoring keep graduates connected to the next intake. |
-| `audio/journey-10.mp3` | Confidence rises at every stage, and every stage has a number the university can track. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/question.mp3` | 0:00.3–0:04.3 | What our students lack is not content. It is a place. |
+| `vo/question.mp3` | 0:04.7–0:12.0 | A place to be supported, to do research that needs a laboratory, and to meet the industries that will employ them. |
 
-## 06 · The three sites
+## 06 · The model
 
-| File | Line |
-| --- | --- |
-| `audio/sites-01.mp3` | Every square metre has a job. The Hub sits on the Cape Town waterfront: four levels, anchored in marine studies and the blue economy. |
-| `audio/sites-02.mp3` | Students arrive into a lobby with a multilingual welcome wall, self-help kiosks and smart access. |
-| `audio/sites-03.mp3` | Hybrid studios bring remote peers into the room, with tracking cameras and live captions. |
-| `audio/sites-04.mp3` | And an operations centre monitors space use and energy across the building. |
-| `audio/sites-05.mp3` | The Centre in Mahikeng rises over two levels, behind a facade patterned on the regional landscape. |
-| `audio/sites-06.mp3` | Inside, Sol Plaatje artwork forms the civic welcome, and a collaboration studio reconfigures into four layouts. |
-| `audio/sites-07.mp3` | The Spoke in Mthatha is a single level, with language choice at the welcome screen and live expert support from across the network. |
-| `audio/sites-08.mp3` | Its community forecourt takes learning outdoors, under a shaded canopy. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/model.mp3` | 0:00.3–0:04.9 | Each site anchors an economy its region already lives by. |
+| `vo/model.mp3` | 0:05.3–0:12.9 | The ocean economy in Cape Town. Mining and geoscience in Mahikeng. Health sciences in Mthatha. |
+| `vo/model.mp3` | 0:13.4–0:18.6 | One design language, and one digital backbone run from the main campus. |
 
-## 07 · Accommodation brief and zoning
+## 07 · Student experience
 
-| File | Line |
-| --- | --- |
-| `audio/brief-01.mp3` | The brief is specific enough to cost. At the Hub, eleven named zones account for 4,530 of the 5,000 square metres. |
-| `audio/brief-02.mp3` | The largest is the marine learning commons, at 800 square metres. |
-| `audio/brief-03.mp3` | The zoning plans show where every zone sits, floor by floor. |
-| `audio/brief-04.mp3` | At the Centre, eight zones account for 1,730 square metres, led by the learning commons and digital laboratories. |
-| `audio/brief-05.mp3` | At the Spoke, five zones account for 625 square metres. |
-| `audio/brief-06.mp3` | At every site, the balance for circulation and services is declared openly, and will be confirmed in detailed design. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/journey.mp3` | 0:00.3–0:04.5 | Every space serves a student journey that reaches out first. |
+| `vo/journey.mp3` | 0:04.9–0:07.5 | Arrive, and the student is expected. |
+| `vo/journey.mp3` | 0:08.0–0:12.0 | Fall behind, and an adviser reaches out before they ask. |
+| `vo/journey.mp3` | 0:12.5–0:16.7 | Learn, collaborate and research in spaces booked in seconds. |
+| `vo/journey.mp3` | 0:17.2–0:20.1 | Connect with the partners who will employ them. |
+| `vo/journey.mp3` | 0:20.5–0:28.1 | And belong, returning as mentors to the next intake. Every stage has a number the university can track. |
 
-## 08 · The case for capital
+## 08 · The three sites
 
-| File | Line |
-| --- | --- |
-| `audio/capital-01.mp3` | Now, the case for capital. Design once, deploy many, and release capital against evidence. |
-| `audio/capital-02.mp3` | Across the three sites, 6,885 of the 7,900 stated square metres are already allocated to named functions. That is 87% allocation efficiency. |
-| `audio/capital-03.mp3` | The space mix shows how each site balances learning, research, student support and administration. |
-| `audio/capital-04.mp3` | And the same modules repeat at every scale, so furniture, technology, wayfinding and finishes are specified once and procured across the network. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/sites.mp3` | 0:00.3–0:06.0 | The Hub is the flagship. Five thousand square metres on the Cape Town waterfront. |
+| `vo/sites.mp3` | 0:06.5–0:10.3 | The Centre brings the same standard inland, to Mahikeng. |
+| `vo/sites.mp3` | 0:10.8–0:15.0 | The Spoke takes UNISA into the community in Mthatha. |
 
-## 09 · Three levers
+## 09 · Accommodation brief and zoning
 
-| File | Line |
-| --- | --- |
-| `audio/levers-01.mp3` | Three levers make the case, and each one comes with a measure, with targets set in the business case. |
-| `audio/levers-02.mp3` | First, lower cost and delivery risk. One specification and repeat procurement, with lessons from the Hub priced into the Centre and the Spoke. |
-| `audio/levers-03.mp3` | Second, space that earns its keep. Every room is bookable, every booking is measured, and energy is tracked per square metre. |
-| `audio/levers-04.mp3` | Third, new partnership income: a blue economy incubator, hybrid conferencing, and public lectures and community programmes. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/sites.mp3` | 0:15.5–0:19.2 | In every brief, each square metre has a named purpose. |
 
-## 10 · Gated investment pathway and risks
+## 10 · Material palette
 
-| File | Line |
-| --- | --- |
-| `audio/gates-01.mp3` | Funding is released gate by gate, and each gate is a board decision. Gate one is today: endorse the One UNISA model, and the Hub as the first site. |
-| `audio/gates-02.mp3` | Gate two delivers the detailed design and the business case. |
-| `audio/gates-03.mp3` | Gate three releases construction funding for the Hub, but only against an approved business case. |
-| `audio/gates-04.mp3` | Gate four approves the Centre in Mahikeng, once Hub utilisation data proves the model. |
-| `audio/gates-05.mp3` | And gate five brings the Spoke in Mthatha, then further Spokes from the same kit of parts. |
-| `audio/gates-06.mp3` | We also name the risks, from cost overrun and low utilisation to ageing technology and weak local relevance, and how the model responds to each. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/materials.mp3` | 0:00.3–0:03.1 | The architecture is in the materials. |
+| `vo/materials.mp3` | 0:03.6–0:09.3 | At the Hub, concrete brings thermal mass, and stands up to salt air on the waterfront. |
+| `vo/materials.mp3` | 0:09.8–0:15.5 | Pigmented plaster carries its colour through the finish, with far less need to repaint. |
+| `vo/materials.mp3` | 0:16.0–0:21.8 | Full height glazing opens every floor to the harbour, while vertical fins shade the glass. |
 
-## 11 · The decision we request
+## 11 · Material palettes by site
 
-| File | Line |
-| --- | --- |
-| `audio/ask-01.mp3` | So, the decision we request. Approve funding to take the Hub through detailed design and a full business case. |
-| `audio/ask-02.mp3` | This is the first gated phase of One UNISA. It commits the university to evidence, not to construction. |
-| `audio/ask-03.mp3` | It returns to this board with three things: a priced cost plan, an enrolment and utilisation model, and partners on paper. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/materials.mp3` | 0:22.2–0:31.2 | At the Centre, brick, ochre plaster and stone. At the Spoke, natural stone and warm plaster. Chosen once, and built to last. |
 
-## 12 · Render gallery
+## 12 · The case for capital
 
-| File | Line |
-| --- | --- |
-| `audio/gallery-01.mp3` | Finally, see it for yourself. Twenty concept renders from revision B, ready to filter by site or by type of space. |
-| `audio/gallery-02.mp3` | Thank you. |
+| Recording | Time | Line |
+|---|---|---|
+| `vo/capital.mp3` | 0:00.3–0:03.7 | For the finance committee, the logic is disciplined. |
+| `vo/capital.mp3` | 0:04.1–0:13.0 | Design once and deploy many. One repeatable kit of parts lowers design cost and delivery risk at every new site. |
+
+## 13 · Three levers
+
+| Recording | Time | Line |
+|---|---|---|
+| `vo/capital.mp3` | 0:13.4–0:20.2 | Smart building systems measure utilisation and energy, so every square metre earns its keep. |
+| `vo/capital.mp3` | 0:20.6–0:27.9 | Each site opens new partnership income, from industry research to conferencing and community programmes. |
+
+## 14 · Gated investment pathway and risks
+
+| Recording | Time | Line |
+|---|---|---|
+| `vo/capital.mp3` | 0:28.4–0:33.9 | And capital is released gate by gate, only against evidence from the gate before. |
+
+## 15 · The decision we request
+
+| Recording | Time | Line |
+|---|---|---|
+| `vo/ask.mp3` | 0:00.3–0:10.4 | We ask the board to approve funding to take the Hub through detailed design and a full business case, as the first gated phase of UNISA Global. |
+| `vo/ask.mp3` | 0:10.9–0:15.6 | UNISA Global. Connected. Present. Ready for Africa's future. |
+
+## 16 · Render gallery
+
+No narration. The tour ends on the slide before; the gallery is for browsing.

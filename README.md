@@ -1,10 +1,12 @@
-# One UNISA: interactive pitch deck
+# UNISA Global: interactive pitch deck
 
-A slide deck for the One UNISA board presentation, with a narrated tour, a cinematic globe opening and presenter tools. Everything it needs is in this folder, so it runs without internet.
+A slide deck for the UNISA Global board presentation, with a recorded narrated tour, a cinematic globe opening and presenter tools. Everything it needs is in this folder, so it runs without internet.
 
 ## Open it
 
-Double-click `index.html`. Chrome or Edge give the best result: the globe uses WebGL, and they have the most natural built-in voices.
+Double-click `index.html`. Chrome or Edge give the best result: the globe uses WebGL.
+
+For the full effect, serve the folder instead (see *Phone as a remote* below): the renders on the cover and in the site viewer then move gently in depth. Browsers do not allow this from a double-clicked file, so there they show as still images. Everything else is the same.
 
 Move with the arrow keys, a presentation clicker, the scroll wheel or trackpad, a swipe on a tablet, or the arrows in the bottom bar.
 
@@ -34,28 +36,13 @@ If the laptop has Node.js 18 or newer:
 node tools/serve.mjs
 ```
 
-Open the address it prints (http://localhost:8080) instead of double-clicking `index.html`, then press Present. The presenter view shows a QR code: scan it with a phone on the same Wi-Fi to change slides, pause the voice and black the screen. Only that QR code's private link can send commands.
+Open the address it prints (http://localhost:8080) instead of double-clicking `index.html`, then press Present. Served this way, the cover and site renders also move in depth. The presenter view shows a QR code: scan it with a phone on the same Wi-Fi to change slides, pause the voice and black the screen. Only that QR code's private link can send commands.
 
 ## The voiceover
 
-Until the recorded voice is added, the tour uses the browser's own voice, which varies by computer. To record it with ElevenLabs:
+Press play on the cover or in the bottom bar. The tour plays the eleven recorded sections in `vo/`, about four minutes in all, and moves through the slides by itself, ending on the ask. Captions follow the voice word by word, and highlights land on the words they belong to. Pause at any time; play carries on from the same word.
 
-1. Create an API key in ElevenLabs (Profile, API keys). A paid plan is needed for commercial use of the audio.
-2. Optional: choose a voice. This lists the voices on your account:
-   ```
-   ELEVENLABS_API_KEY=your-key node tools/make-voiceover.mjs --list-voices
-   ```
-3. Record the tour (about 6,500 characters of ElevenLabs credit):
-   ```
-   ELEVENLABS_API_KEY=your-key node tools/make-voiceover.mjs --voice=VOICE_ID
-   ```
-   On Windows PowerShell, set the key first with `$env:ELEVENLABS_API_KEY="your-key"`.
-
-This writes one MP3 per line into `audio/` and the word timings into `audio/timings.js`. Open the deck again: the narration uses the recording, the captions follow it word by word, and the visual cues land on the exact words.
-
-To change the wording, edit `js/voiceover.js` and run the same command again. It re-records only the lines that changed. `voiceover-script.md` lists every line with its file name.
-
-For music under the voice, add a licensed track as `audio/music.mp3` and run the command once more. It dips while the voice speaks.
+`js/voiceover.js` holds each recording's timing table (every line's start and end time and its words) and which slide each line plays on. `voiceover-script.md` lists the same lines by slide, for reading. If a section is re-recorded, update its times there so the captions and cues stay in step. If an MP3 is missing, that part of the tour runs on timed captions instead.
 
 ## What is in the folder
 
@@ -65,11 +52,14 @@ For music under the voice, add a licensed track as `audio/music.mp3` and run the
 | `presenter.html`, `remote.html` | Presenter view and phone remote |
 | `js/deck.js` | Slides, voiceover engine, transitions, presenter link |
 | `js/globe.js`, `js/geo-dots.js` | The opening globe and its map dots |
-| `js/voiceover.js` | The words of the narrated tour and how names are pronounced |
+| `js/netmap.js`, `js/netmap-data.js` | The network map of the three sites |
+| `js/live.js` | Depth motion for the renders (when served) |
+| `js/voiceover.js` | Timing table of the recorded voiceover |
 | `css/deck.css`, `fonts/` | Styles and the three typefaces |
-| `img/` | Renders, plans, logos and presenter thumbnails |
-| `audio/` | Recorded voiceover, once made |
-| `tools/make-voiceover.mjs` | Records the voiceover with ElevenLabs |
+| `img/` | Renders, plans, 3D views, material boards, logos and presenter thumbnails |
+| `img/depth/` | Depth maps for the moving renders |
+| `vid/` | Short films shown in the site viewer |
+| `vo/` | The recorded voiceover, one MP3 per section |
 | `tools/serve.mjs` | Serves the deck with the phone remote |
 | `vendor/` | GSAP, three.js and a QR code library |
 

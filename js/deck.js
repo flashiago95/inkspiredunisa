@@ -1,5 +1,5 @@
 (function(){
-/* One UNISA deck: slides, the narrated tour, transitions and presenter tools.
+/* UNISA Global deck: slides, the narrated tour, transitions and presenter tools.
    The words of the tour are in voiceover.js; the opening globe is in globe.js. */
 gsap.registerPlugin(Flip,SplitText);
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -19,7 +19,7 @@ const vo={state:'idle',ci:0,part:0,pos:0,wi:-1,fired:0,tok:0,timer:null,tt:null,
 
 /* ---------- HERO ---------- */
 const HERO=[
- {tag:'The Hub · Cape Town · <span style="text-transform:none">5,000 m²</span>',h:'One UNISA. A <em>connected</em> learning ecosystem.',p:'Three sites, one design language and one digital backbone, built where Africa’s growth economies already live.'},
+ {tag:'The Hub · Cape Town · <span style="text-transform:none">5,000 m²</span>',h:'UNISA Global. A <em>connected</em> learning ecosystem.',p:'Three sites, one design language and one digital backbone, built where Africa’s growth economies already live.'},
  {tag:'The Centre · Mahikeng · <span style="text-transform:none">2,200 m²</span>',h:'Built where the <em>economy</em> already lives.',p:'Mining and geoscience, with a facade patterned on the land and a welcome from Sol Plaatje.'},
  {tag:'The Spoke · Mthatha · <span style="text-transform:none">700 m²</span>',h:'Global knowledge. <em>Local</em> impact.',p:'Pharmaceutical and health studies, a short walk from the community it serves.'}
 ];
@@ -85,14 +85,14 @@ function hlSite(k){
 
 /* ---------- JOURNEY ---------- */
 const J=[
- {k:'Discover',img:'g-spk-byod',say:'I have enrolled. Where do I go now?',act:'Enrolment triggers a welcome in the student’s own language with the nearest site, opening hours and a bookable orientation slot.',touch:'UNISA app, SMS and email, multilingual welcome screens',space:'Spoke BYOD lounge and welcome wall',measure:'Orientation bookings per new enrolment',c:34},
- {k:'Arrive',img:'d-hub-lobby',say:'I walked in and I was expected.',act:'Smart access recognises the booking. Self help kiosks handle routine requests so staff can focus on the student in front of them.',touch:'Access gates, kiosks, digital wayfinding',space:'Hub entrance lobby and student services',measure:'Time to service at reception',c:52},
- {k:'Support',img:'g-spk-consult',say:'I was falling behind and someone noticed.',act:'Missed submissions or low platform activity raise an early alert. An adviser books a consultation before the student asks.',touch:'Case management, adviser outreach, consultation booking',space:'Consultation and counselling rooms',measure:'Early alerts resolved within seven days',c:40},
- {k:'Learn',img:'d-hub-commons',say:'I found a place to focus.',act:'The app suggests a free seat or study room near the student’s next session, with power and data at every seat.',touch:'Room booking app, availability screens',space:'Learning Commons and library',measure:'Seat and room utilisation by hour',c:60},
- {k:'Collaborate',img:'d-hub-hybrid',say:'My group lives in four provinces.',act:'Hybrid studios join remote peers automatically, with tracking cameras, live captions and recording built in.',touch:'Hybrid studio, learning platform integration',space:'Hybrid learning studios',measure:'Hybrid sessions per week',c:68},
- {k:'Research',img:'d-hub-research',say:'My research has real data and real equipment.',act:'Postgraduate students are matched to lab time, datasets and supervisors, and progress is visible to both sides.',touch:'Lab booking, research data platforms',space:'Research studios and laboratories',measure:'Postgraduate completion on time',c:76},
- {k:'Connect',img:'d-hub-workshop',say:'I met the people who will employ me.',act:'Industry partners post live challenges through the incubator. Students are invited to pitch and to work on partner projects.',touch:'Incubator programmes, partner events, boardrooms',space:'Innovation incubator and engagement hub',measure:'Partner projects and graduate placements',c:84},
- {k:'Belong',img:'d-hub-lecture',say:'This is my university.',act:'Graduation support, public lectures and alumni mentoring keep graduates connected to the next intake.',touch:'Lecture hall events, alumni network',space:'Lecture hall and public atrium',measure:'Alumni returning as mentors',c:92}
+ {k:'Discover',img:'sv-byod',say:'I have enrolled. Where do I go now?',act:'Enrolment triggers a welcome in the student’s own language with the nearest site, opening hours and a bookable orientation slot.',touch:'UNISA app, SMS and email, multilingual welcome screens',space:'Spoke BYOD lounge and welcome wall',measure:'Orientation bookings per new enrolment',c:34},
+ {k:'Arrive',img:'h-researchatrium',say:'I walked in and I was expected.',act:'Smart access recognises the booking. Self help kiosks handle routine requests so staff can focus on the student in front of them.',touch:'Access gates, kiosks, digital wayfinding',space:'Hub entrance lobby and student services',measure:'Time to service at reception',c:52},
+ {k:'Support',img:'sv-consult',say:'I was falling behind and someone noticed.',act:'Missed submissions or low platform activity raise an early alert. An adviser books a consultation before the student asks.',touch:'Case management, adviser outreach, consultation booking',space:'Consultation and counselling rooms',measure:'Early alerts resolved within seven days',c:40},
+ {k:'Learn',img:'h-commons',say:'I found a place to focus.',act:'The app suggests a free seat or study room near the student’s next session, with power and data at every seat.',touch:'Room booking app, availability screens',space:'Learning Commons and library',measure:'Seat and room utilisation by hour',c:60},
+ {k:'Collaborate',img:'h-innovation',say:'My group lives in four provinces.',act:'Hybrid studios join remote peers automatically, with tracking cameras, live captions and recording built in.',touch:'Hybrid studio, learning platform integration',space:'Hybrid learning studios',measure:'Hybrid sessions per week',c:68},
+ {k:'Research',img:'h-research',say:'My research has real data and real equipment.',act:'Postgraduate students are matched to lab time, datasets and supervisors, and progress is visible to both sides.',touch:'Lab booking, research data platforms',space:'Research studios and laboratories',measure:'Postgraduate completion on time',c:76},
+ {k:'Connect',img:'h-workshop',say:'I met the people who will employ me.',act:'Industry partners post live challenges through the incubator. Students are invited to pitch and to work on partner projects.',touch:'Incubator programmes, partner events, boardrooms',space:'Innovation incubator and engagement hub',measure:'Partner projects and graduate placements',c:84},
+ {k:'Belong',img:'h-lecture',say:'This is my university.',act:'Graduation support, public lectures and alumni mentoring keep graduates connected to the next intake.',touch:'Lecture hall events, alumni network',space:'Lecture hall and public atrium',measure:'Alumni returning as mentors',c:92}
 ];
 let ji=-1;
 function drawCurve(){
@@ -123,18 +123,18 @@ goJ(0);
 /* ---------- SITES AND BRIEF ---------- */
 const SITES={
  hub:{name:'The Hub',place:'Cape Town waterfront',niche:'Marine studies and the blue economy',area:5000,levels:'Four levels',role:'Flagship and network anchor',
-  imgs:[['d-hub-night','Exterior at night'],['g-hub-promenade','Waterfront promenade'],['g-hub-entrance','Main entrance'],['d-hub-lobby','Entrance lobby'],['g-hub-atrium','Central atrium'],['d-hub-library','Learning Commons library'],['d-hub-commons','Learning Commons'],['d-hub-hybrid','Hybrid learning studio'],['d-hub-lecture','Lecture hall'],['d-hub-research','Marine and port logistics research studio'],['d-hub-postgrad','Postgraduate research'],['d-hub-workshop','Boardroom, strategy workshop'],['d-hub-ict','ICT operations centre']],
-  plans:[['plan-hub-0','Ground'],['plan-hub-1','First'],['plan-hub-2','Second'],['plan-hub-3','Third']],
+  imgs:[['h-night','Exterior at night'],['h-waterfront','Waterfront frontage'],['hv-lobby','Welcome lobby and student services','vid/hv-lobby.mp4'],['h-researchatrium','Reception and research atrium'],['h-atrium','Central atrium'],['h-library','Library atrium'],['h-commons','Learning Commons'],['h-innovation','Marine innovation studio'],['h-flex','Flexible innovation studio'],['h-lecture','Lecture hall with accessible seating'],['h-research','Maritime research studio'],['h-boardroom','Glass boardroom'],['h-meetcfg','Meeting room configurations'],['h-boardinfo','Smart boardroom features'],['h-workshop','Boardroom, strategy workshop'],['h-townhall','Town hall configuration'],['h-ops','Blue operations hub']],
+  plans:[['pl-hub-site','Site'],['pl-hub-0','Ground'],['pl-hub-1','First'],['pl-hub-2','Second'],['pl-hub-3','Third'],['m3-hub-front','3D front'],['m3-hub-side','3D side'],['m3-hub-axo','3D aerial']],
   zones:[['Marine hub arrival and public engagement',300,'S'],['Marine learning commons',800,'L'],['Marine science teaching laboratories',480,'L'],['Digital ocean and geospatial laboratories',400,'R'],['Teaching and tutorial zone',500,'L'],['Postgraduate and marine research centre',450,'R'],['Blue economy innovation and incubator',350,'R'],['Student support and counselling',330,'S'],['Community and industry engagement',300,'S'],['Administration and staff',300,'A'],['ICT and building support',320,'A']],
   feats:['Multilingual welcome wall, kiosks and smart access','Bookable group rooms with live availability','Hybrid studios with tracking cameras and captions','Operations centre monitoring space use and energy']},
  centre:{name:'The Centre',place:'Mahikeng, North West',niche:'Mining and geoscience',area:2200,levels:'Two levels',role:'Regional knowledge centre',
-  imgs:[['d-cen-exterior','Exterior, afternoon'],['g-cen-entrance','Entrance and approach'],['g-cen-plaatje','Atrium with Sol Plaatje artwork'],['g-cen-atrium','Learning commons atrium'],['g-cen-commons','Learning commons'],['g-cen-maker','Geoscience makerspace'],['g-cen-collab','Collaboration studio'],['g-cen-configs','Collaboration studio, four layouts'],['g-cen-lecture','Hybrid lecture hall']],
-  plans:[['plan-centre','Ground and first']],
+  imgs:[['c-exterior','Exterior, afternoon'],['c-entrance','Entrance and approach'],['c-plaatje','Atrium with Sol Plaatje artwork'],['c-commons','Learning commons'],['c-atrium','Learning commons atrium'],['cv-lecture','Lecture hall with a Mahikeng outlook','vid/cv-lecture.mp4'],['c-maker','Geoscience makerspace'],['c-collab','Collaboration studio'],['c-configs','Collaboration studio, four layouts']],
+  plans:[['pl-centre-0','Ground'],['pl-centre-1','First']],
   zones:[['Entrance reception and student services',180,'S'],['Digital learning and computer laboratories',360,'L'],['Learning commons and study',420,'L'],['Tutorial and teaching',320,'L'],['Consultation, counselling and academic support',120,'S'],['Administration and staff',150,'A'],['Student amenities',110,'S'],['Operational support',70,'A']],
-  feats:['Facade patterned on the regional landscape','Sol Plaatje artwork as the civic welcome','Collaboration studio that reconfigures into four layouts','Hybrid lecture hall linked to the network']},
+  feats:['Facade patterned on the regional landscape','Sol Plaatje artwork as the civic welcome','Collaboration studio that reconfigures into four layouts','Makerspace and geoscience labs with live data']},
  spoke:{name:'The Spoke',place:'Mthatha, Eastern Cape',niche:'Pharmaceutical and health studies',area:700,levels:'Single level',role:'Community access point',
-  imgs:[['g-spk-exterior','Street frontage at golden hour'],['g-spk-forecourt','Community forecourt'],['g-spk-byod','Bring your own device lounge'],['g-spk-library','Pharmaceutical knowledge commons'],['g-spk-research','Pharmaceutical research studio'],['g-spk-consult','Consultation room']],
-  plans:[['plan-spoke','Ground']],
+  imgs:[['s-exterior','Street frontage at golden hour'],['s-forecourt','Community forecourt'],['sv-byod','Bring your own device lounge','vid/sv-byod.mp4'],['s-library','Pharmaceutical knowledge commons'],['s-research','Pharmaceutical research studio'],['sv-consult','Consultation room','vid/sv-consult.mp4']],
+  plans:[['pl-spoke-0','Ground']],
   zones:[['Public access and student services',80,'S'],['Learning and academic spaces',225,'L'],['Digital library and innovation',150,'R'],['Administration and support',90,'A'],['Amenities and building support',80,'A']],
   feats:['Language choice at the welcome screen','Live expert support from across the network','Outdoor learning under a shaded canopy','Community outreach and wellness programmes']}
 };
@@ -154,19 +154,21 @@ function openSite(k){
   const list=zs.map((z,i)=>'<div data-z="'+i+'"><i style="background:'+CAT[z[2]][1]+'"></i><span>'+z[0]+'</span><span>'+fmt(z[1])+' m²</span></div>').join('')+(un>0?'<div class="u" data-z="u"><i style="background:repeating-linear-gradient(135deg,var(--cat-u) 0 3px,#2a2e34 3px 6px)"></i><span>Circulation and services, to be confirmed</span><span>'+fmt(un)+' m²</span></div>':'');
   const top=$('#sitePanel'), low=$('#briefPanel');
   top.style.setProperty('--acc',acc); low.style.setProperty('--acc',acc);
-  top.innerHTML='<div class="vcol"><div class="viewer" id="viewer"></div><div class="thumbs" id="thumbs">'+s.imgs.map((m,i)=>'<button type="button" data-i="'+i+'" aria-label="'+m[1]+'"><img src="'+TH(m[0])+'" alt="" loading="lazy"></button>').join('')+'</div></div>'+
+  top.innerHTML='<div class="vcol"><div class="viewer" id="viewer"></div><div class="thumbs" id="thumbs">'+s.imgs.map((m,i)=>'<button type="button" data-i="'+i+'" aria-label="'+m[1]+(m[2]?', short film':'')+'"'+(m[2]?' class="vid"':'')+'><img src="'+TH(m[0])+'" alt="" loading="lazy"></button>').join('')+'</div></div>'+
   '<div class="site-facts"><span class="mono" style="color:'+acc+'">'+s.name+' · '+s.role+'</span><div class="big">'+fmt(s.area)+'<small> m²</small></div><p style="color:var(--muted);margin-top:-6px">Stated gross floor area</p>'+
   '<div class="facts"><div><b>'+s.place+'</b><span>Location</span></div><div><b>'+s.niche+'</b><span>Catalytic niche</span></div><div><b>'+s.levels+'</b><span>Building form</span></div><div><b>'+s.zones.length+' zones</b><span>In the accommodation brief</span></div></div>'+
   '<ul class="feat">'+s.feats.map(f=>'<li>'+f+'</li>').join('')+'</ul></div>';
   low.innerHTML='<div class="card"><div class="card-h"><h3>'+s.name+' accommodation brief</h3><span class="mono">'+fmt(alloc)+' of '+fmt(s.area)+' m² allocated</span></div><div class="stack" id="stack">'+stack+'</div><div class="zones" id="zones">'+list+'</div></div>'+
-  '<div class="card"><div class="card-h"><h3>Zoning plans</h3><div class="floors" id="floors">'+s.plans.map((p,i)=>'<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'">'+p[1]+'</button>').join('')+'</div></div><div class="planbox" id="planbox"></div><p class="mono" style="margin-top:10px">Concept zoning, scale 1:300 at A1. Select to enlarge.</p></div>';
-  viewImg=i=>{const m=s.imgs[i];$('#viewer').innerHTML='<img src="'+IMG(m[0])+'" alt="'+m[1]+'"><div class="cap"><span>'+m[1]+'</span><span class="mono">'+(i+1)+' / '+s.imgs.length+'</span></div>';
+  '<div class="card"><div class="card-h"><h3>Plans and 3D model</h3><div class="floors" id="floors">'+s.plans.map((p,i)=>'<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'">'+p[1]+'</button>').join('')+'</div></div><div class="planbox" id="planbox"></div><p class="mono" style="margin-top:10px">Architect’s drawings and model views at concept stage. Select to enlarge.</p></div>';
+  viewImg=i=>{const m=s.imgs[i];
+    $('#viewer').innerHTML=(m[2]?'<video src="'+m[2]+'" poster="'+IMG(m[0])+'" autoplay muted loop playsinline aria-label="'+m[1]+', short film"></video>':'<img src="'+IMG(m[0])+'" alt="'+m[1]+'">')+'<div class="cap"><span>'+m[1]+(m[2]?' · film':'')+'</span><span class="mono">'+(i+1)+' / '+s.imgs.length+'</span></div>';
+    if(!m[2])viewerLive($('#viewer'),m[0]);else viewerLive(null,'');
     $$('#thumbs button').forEach((b,k)=>b.setAttribute('aria-current',k===i));
     const tb=$$('#thumbs button')[i], th=$('#thumbs'); if(tb&&th)th.scrollTo({left:tb.offsetLeft-th.clientWidth/2+tb.clientWidth/2,behavior:reduce?'auto':'smooth'});
-    $('#viewer img').onclick=e=>openLB(s.imgs.map(x=>({src:x[0],title:x[1],meta:s.name+', '+s.place})),i,e.currentTarget)};
+    $('#viewer').onclick=()=>openLB(s.imgs.map(x=>({src:x[0],title:x[1],meta:s.name+', '+s.place})),i,$('#viewer img,#viewer video'))};
   $$('#thumbs button').forEach(b=>b.onclick=()=>{userTookOver();viewImg(+b.dataset.i)}); viewImg(0);
-  showPlan=i=>{const p=s.plans[Math.min(i,s.plans.length-1)];$('#planbox').innerHTML='<img src="'+IMG(p[0])+'" alt="'+s.name+' zoning plan, '+p[1]+' floor">';$$('#floors button').forEach((b,k)=>b.setAttribute('aria-pressed',k===i));
-    $('#planbox').onclick=()=>openLB(s.plans.map(x=>({src:x[0],title:s.name+' zoning plan, '+x[1].toLowerCase()+' floor',meta:'Concept zoning'})),i,$('#planbox img'))};
+  showPlan=i=>{const p=s.plans[Math.min(i,s.plans.length-1)];const pv=p[1].startsWith('3D')||p[1]==='Site';$('#planbox').innerHTML='<img src="'+IMG(p[0])+'" alt="'+s.name+', '+p[1]+(pv?' view':' floor plan')+'">';$$('#floors button').forEach((b,k)=>b.setAttribute('aria-pressed',k===i));
+    $('#planbox').onclick=()=>openLB(s.plans.map(x=>({src:x[0],title:s.name+', '+(x[1].startsWith('3D')?x[1].replace('3D','3D model,'):x[1].toLowerCase()+(x[1]==='Site'?' plan':' floor plan')),meta:x[0].startsWith('m3')?'Inkspired Architects, Revit model':'Inkspired Architects, concept drawings'})),i,$('#planbox img'))};
   $$('#floors button').forEach(b=>b.onclick=()=>{userTookOver();showPlan(+b.dataset.i)}); showPlan(0);
   const mark=(z,on)=>{$$('#stack i,#zones div').forEach(e=>e.classList.toggle('hl',on&&e.dataset.z===z));$$('#stack i').forEach(e=>e.style.opacity=on&&e.dataset.z!==z?.3:1)};
   hlZone=key=>{
@@ -177,7 +179,6 @@ function openSite(k){
   };
   $$('#stack i[data-z],#zones div[data-z]').forEach(e=>{e.onmouseenter=()=>mark(e.dataset.z,true);e.onmouseleave=()=>mark(e.dataset.z,false)});
 }
-openSite('hub');
 
 /* ---------- CAPITAL ---------- */
 (function(){
@@ -197,9 +198,9 @@ openSite('hub');
 
 /* ---------- GALLERY ---------- */
 const GAL=[
- ['g-hub-promenade','Waterfront promenade','hub','Exterior'],['g-hub-entrance','Main entrance','hub','Arrival'],['g-hub-atrium','Central atrium','hub','Atrium'],['g-hub-atrium-tall','Atrium, full height view','hub','Atrium'],
- ['g-cen-entrance','Entrance and approach','centre','Arrival'],['g-cen-plaatje','Atrium with Sol Plaatje artwork','centre','Atrium'],['g-cen-atrium','Learning commons atrium','centre','Learning'],['g-cen-commons','Learning commons','centre','Learning'],['g-cen-commons2','Learning commons, upper view','centre','Learning'],['g-cen-commons-annot','Learning commons, design features','centre','Learning'],['g-cen-maker','Geoscience makerspace','centre','Research'],['g-cen-collab','Collaboration studio in use','centre','Collaboration'],['g-cen-configs','Collaboration studio, four layouts','centre','Collaboration'],['g-cen-lecture','Hybrid lecture hall','centre','Teaching'],
- ['g-spk-exterior','Street frontage at golden hour','spoke','Exterior'],['g-spk-forecourt','Community forecourt','spoke','Arrival'],['g-spk-byod','Bring your own device lounge','spoke','Learning'],['g-spk-library','Pharmaceutical knowledge commons','spoke','Learning'],['g-spk-research','Pharmaceutical research studio','spoke','Research'],['g-spk-consult','Consultation room','spoke','Support']
+ ['h-waterfront','Waterfront frontage','hub','Exterior'],['h-night','Exterior at night','hub','Exterior'],['hv-lobby','Welcome lobby and student services','hub','Arrival'],['h-researchatrium','Reception and research atrium','hub','Arrival'],['h-atrium','Central atrium','hub','Atrium'],['h-library','Library atrium','hub','Learning'],['h-commons','Learning Commons','hub','Learning'],['h-lecture','Lecture hall with accessible seating','hub','Teaching'],['h-innovation','Marine innovation studio','hub','Collaboration'],['h-flex','Flexible innovation studio','hub','Collaboration'],['h-research','Maritime research studio','hub','Research'],['h-boardroom','Glass boardroom','hub','Collaboration'],['h-meetcfg','Meeting room configurations','hub','Collaboration'],['h-boardinfo','Smart boardroom features','hub','Collaboration'],['h-workshop','Boardroom, strategy workshop','hub','Collaboration'],['h-townhall','Town hall configuration','hub','Collaboration'],['h-ops','Blue operations hub','hub','Support'],
+ ['c-exterior','Exterior, afternoon','centre','Exterior'],['c-entrance','Entrance and approach','centre','Arrival'],['c-plaatje','Atrium with Sol Plaatje artwork','centre','Atrium'],['c-commons','Learning commons','centre','Learning'],['c-atrium','Learning commons atrium','centre','Learning'],['c-maker','Geoscience makerspace','centre','Research'],['c-collab','Collaboration studio in use','centre','Collaboration'],['c-configs','Collaboration studio, four layouts','centre','Collaboration'],['cv-lecture','Lecture hall with a Mahikeng outlook','centre','Teaching'],
+ ['s-exterior','Street frontage at golden hour','spoke','Exterior'],['s-forecourt','Community forecourt','spoke','Arrival'],['sv-byod','Bring your own device lounge','spoke','Learning'],['s-library','Pharmaceutical knowledge commons','spoke','Learning'],['s-research','Pharmaceutical research studio','spoke','Research'],['sv-consult','Consultation room','spoke','Support']
 ];
 const SN={hub:'The Hub',centre:'The Centre',spoke:'The Spoke'};
 const TYPES=['Exterior','Arrival','Atrium','Learning','Teaching','Research','Collaboration','Support'];
@@ -339,65 +340,166 @@ function resetDive(){
   gsap.to('#africa .pro-scrim,#africa .pro-foot',{opacity:1,duration:.6});
 }
 
+/* ---------- NETWORK MAP ----------
+   South Africa draws itself, the three sites appear, the network links them and the floor areas count up. */
+const lgs=$$('#network .lg2');
+let netMap=null, netT0=null, netRaf=0;
+try{if(window.NetMap&&window.NETMAP_DATA)netMap=NetMap($('#opMap'),NETMAP_DATA,{fontSize:40,land:'#1a1a1a'})}catch(e){netMap=null}
+const eOut=x=>{x=Math.max(0,Math.min(1,x));return 1-Math.pow(1-x,3)};
+const eInOut=x=>{x=Math.max(0,Math.min(1,x));return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const fmtS=n=>Math.round(n).toLocaleString('en-US').replace(/,/g,' ');
+function netFrame(now){
+  if(netT0===null)netT0=now;
+  const t=(now-netT0)/1000, pin=[2.4,3.4,4.4];
+  netMap.set({outline:eInOut(t/2.4),pins:pin.map(a=>eOut((t-a)/.5)),lines:[0,1,2].map(i=>eInOut((t-5.4-i*.6)/1)),t});
+  lgs.forEach((l,i)=>{const a=i<3?pin[i]:7.6;l.classList.toggle('in',t>=a);const c=l.querySelector('.cnt2');c.textContent=fmtS(+c.dataset.to*eOut((t-a)/(i<3?1:1.6)))});
+  /* The pulses keep travelling while the slide is on screen. */
+  if(IDS[pi]==='network'||t<9)netRaf=requestAnimationFrame(netFrame);
+}
+function netPlay(){
+  if(!netMap)return;
+  cancelAnimationFrame(netRaf);
+  if(reduce){netMap.set({outline:1,pins:[1,1,1],lines:[1,1,1],t:0});lgs.forEach(l=>{l.classList.add('in');const c=l.querySelector('.cnt2');c.textContent=fmtS(+c.dataset.to)});return}
+  netT0=null; netRaf=requestAnimationFrame(netFrame);
+}
+$('#opReplay').onclick=()=>{userTookOver();netPlay()};
+
+/* ---------- PREFACE ----------
+   The Vice-Chancellor's words light up one by one: in step with the voice when narrated, at reading pace otherwise. */
+const vcq=$('#vcq');
+vcq.querySelectorAll('.ln').forEach(l=>{l.innerHTML=l.textContent.split(' ').map(w=>'<span class="qw">'+w+'</span>').join(' ')});
+const qws=[...vcq.querySelectorAll('.qw')];
+let qTl=null;
+function quoteTo(i){qws.forEach((w,k)=>w.classList.toggle('on',k<=i))}
+function quoteReveal(){
+  if(qTl)qTl.kill();
+  if(reduce){quoteTo(qws.length);return}
+  quoteTo(-1); qTl=gsap.timeline({delay:.5});
+  qws.forEach((w,i)=>qTl.call(()=>w.classList.add('on'),null,i*.09));
+}
+
+/* ---------- MATERIALS: HUB FACADE STUDY ---------- */
+const STUDY=[['sq-hub-0','Podium','Concrete','Thermal mass steadies indoor temperatures, and concrete stands up to salt air on the waterfront.'],['sq-hub-3','Upper facade','Pigmented plaster','Colour runs through the body of the finish, so it weathers gracefully with far less need to repaint.'],['','Learning floors','Glazing and vertical fins','Full height glazing opens every floor to the harbour, while vertical fins shade the glass and set the facade rhythm.']];
+const hsBtns=$$('#study .hs'), stTabs=$$('#stTabs button'), lens=$('#slens');
+let stCur=-1, studyTimer=null;
+function studyShow(i){
+  stCur=i; const d=STUDY[i], h=hsBtns[i];
+  hsBtns.forEach((b,k)=>b.setAttribute('aria-pressed',k===i)); stTabs.forEach((b,k)=>b.setAttribute('aria-pressed',k===i));
+  lens.style.left=h.style.left; lens.style.top=h.style.top;
+  lens.style.backgroundImage=d[0]?'url(img/mat/'+d[0]+'.webp)':'url(img/h-waterfront.webp)';
+  lens.style.backgroundSize=d[0]?'140%':'700%'; lens.style.backgroundPosition=d[0]?'center':h.style.left+' '+h.style.top;
+  lens.classList.add('on');
+  $('#stWhy').innerHTML='<span class="mono">'+d[1]+'</span><b>'+d[2]+'</b><p>'+d[3]+'</p>';
+}
+function studyAuto(on){clearInterval(studyTimer);studyTimer=null;if(on&&!reduce)studyTimer=setInterval(()=>{if(IDS[pi]==='materials'&&vo.state==='idle')studyShow((stCur+1)%3)},5000)}
+function studyPick(i){studyAuto(false);studyShow(i)}
+hsBtns.forEach(b=>b.onclick=()=>{userTookOver();studyPick(+b.dataset.i)});
+stTabs.forEach(b=>b.onclick=()=>{userTookOver();studyPick(+b.dataset.i)});
+studyShow(0);
+
+/* ---------- MATERIALS: PALETTES ---------- */
+const PAL=[['hub','The Hub, Cape Town','Concrete and pigmented plaster','Honest, robust surfaces suited to a marine climate, warmed with pigmented plaster.',[['sq-hub-0','Concrete'],['sq-hub-3','Pigmented plaster'],['sq-hub-1','Concrete'],['sq-hub-2','Concrete'],['sq-hub-4','Plaster']],[['concrete-board','Concrete board'],['plaster-board','Pigmented plaster board']]],
+ ['centre','The Centre, Mahikeng','Brick, ochre plaster and stone','A palette drawn from the North West landscape, chosen to age with dignity and low upkeep.',[['sq-centre-3','Natural stone'],['sq-centre-2','Pigmented plaster'],['sq-centre-0','Brick'],['sq-centre-1','Face brick'],['sq-centre-4','Stone']],[['brick-board','Brick board'],['stone-board','Stone board']]],
+ ['spoke','The Spoke, Mthatha','Natural stone and warm plaster','Simple, durable finishes that tie the building to the surrounding hills.',[['sq-spoke-0','Dry stone'],['sq-spoke-3','Natural stone'],['sq-spoke-1','Stone'],['sq-spoke-2','Stone panel'],['sq-spoke-4','Stone']],[['drystone-board','Stone board']]]];
+$('#pal').innerHTML=PAL.map((p,pi2)=>'<article class="palc" data-spot style="--acc:'+ACC[p[0]]+'"><div class="hd"><span class="mono">'+p[1]+'</span><h3>'+p[2]+'</h3><p>'+p[3]+'</p></div><div class="sw">'+
+  p[4].map((w,i)=>'<button type="button" class="reveal'+(i===0?' big':'')+'" style="transition-delay:'+(pi2*.15+i*.08).toFixed(2)+'s" data-p="'+pi2+'" data-i="'+i+'" aria-label="'+w[1]+', enlarge"><img src="img/mat/'+w[0]+'.webp" alt="" loading="lazy"><small>'+w[1]+'</small></button>').join('')+
+  '</div><div class="board">'+p[5].map((b,i)=>'<button type="button" data-p="'+pi2+'" data-b="'+i+'" aria-label="Open '+b[1]+'"><img src="img/mat/'+b[0]+'.webp" alt="'+b[1]+'" loading="lazy"></button>').join('')+
+  '<p class="mono">Material boards by Inkspired Architects. Select to enlarge.</p></div></article>').join('');
+$$('#pal .sw button').forEach(b=>b.onclick=()=>{const p=PAL[+b.dataset.p];openLB(p[4].map(w=>({src:'mat/'+w[0],title:w[1],meta:p[1]+' · material palette'})),+b.dataset.i,b.querySelector('img'))});
+$$('#pal .board button').forEach(b=>b.onclick=()=>{const p=PAL[+b.dataset.p];openLB(p[5].map(w=>({src:'mat/'+w[0],title:w[1],meta:p[1]})),+b.dataset.b,b.querySelector('img'))});
+
+/* ---------- LIVING STILLS ----------
+   Renders with a depth map drift with a slow camera move, sky and light (live.js). Only the slide on screen renders. */
+const LIVE_KEYS=new Set(['c-atrium','c-collab','c-commons','c-configs','c-entrance','c-exterior','c-lecture','c-maker','c-plaatje','h-atrium','h-boardinfo','h-boardroom','h-commons','h-flex','h-innovation','h-lecture','h-library','h-lobby','h-meetcfg','h-night','h-ops','h-promenade','h-research','h-researchatrium','h-townhall','h-waterfront','h-workshop','s-byod','s-consult','s-exterior','s-forecourt','s-library','s-research']);
+const SKY=new Set(['h-waterfront','c-exterior','c-entrance','s-exterior','s-forecourt']);
+const MOVES=['orbit','push','truckL','rise','pull','truckR'];
+const ldImg=src=>new Promise(r=>{const i=new Image();i.decoding='async';i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src});
+/* Browsers do not let WebGL read images opened straight from disk, so moving stills run only when the deck
+   is served (GitHub Pages or tools/serve.mjs). Opened by double-click, the renders keep their slow zoom instead. */
+const LIVE_OK=/^https?:$/.test(location.protocol);
+const makeLive=cv=>{try{return LIVE_OK&&window.Live?new Live(cv):null}catch(e){return null}};
+async function liveReg(L,key){if(L.has(key))return true;const [a,b]=await Promise.all([ldImg(IMG(key)),ldImg('img/depth/'+key+'.png')]);if(!a||!b)return false;L.register(key,a,b);return true}
+function liveFit(cv){const r=cv.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,1.25);const w=Math.max(2,Math.round(r.width*d)),h=Math.max(2,Math.round(r.height*d));if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h}}
+const pingPong=(t,T)=>{const x=(t%(2*T))/T;return x<1?x:2-x};
+/* Cover: the three exteriors, crossfading with the hero. */
+const HK=['h-night','c-exterior','s-exterior'], heroCv=$('#heroGL'), HL=reduce?null:makeLive(heroCv);
+let heroLiveOk=false;
+if(HL){heroCv.style.opacity=0;Promise.all(HK.map(k=>liveReg(HL,k))).then(r=>{heroLiveOk=r.every(Boolean);if(heroLiveOk)heroCv.style.opacity=1;else heroCv.remove()})}else if(heroCv)heroCv.remove();
+let hShown=0,hPrev=null,hChange=0,hT0=performance.now();
+function heroLive(now){
+  if(!heroLiveOk||IDS[pi]!=='vision')return;
+  liveFit(heroCv); const t=(now-hT0)/1000;
+  if(hi!==hShown){hPrev=hShown;hShown=hi;hChange=t}
+  const mx=+(hero.style.getPropertyValue('--mx')||0), my=+(hero.style.getPropertyValue('--my')||0);
+  const lay=k=>{const m=Live.move(MOVES[HK.indexOf(k)%6],pingPong(t,14));m.cx+=mx*.012;m.cy+=my*.008;return Object.assign({key:k,sky:SKY.has(k)?1:.3,sweep:.7,sweepPos:-.4+1.8*pingPong(t,9),tl:t,vig:.25},m)};
+  const f=Math.min(1,(t-hChange)/1.1), L=[];
+  if(hPrev!==null&&f<1)L.push(Object.assign(lay(HK[hPrev]),{alpha:1}));
+  L.push(Object.assign(lay(HK[hShown]),{alpha:hPrev===null?1:f}));
+  try{HL.render(L,t)}catch(e){heroLiveOk=false;heroCv.remove()}
+}
+/* Site viewer: the render on show. One canvas (one WebGL context) moves into each new view. */
+const vCanvas=document.createElement('canvas'); vCanvas.className='livec'; vCanvas.setAttribute('aria-hidden','true');
+const VL=reduce?null:makeLive(vCanvas);
+let vKey=null, vT0=0, vOk=false;
+function viewerLive(host,key){
+  vKey=key; vOk=false; vCanvas.style.opacity=0;
+  if(!VL||!host||!LIVE_KEYS.has(key)){vCanvas.remove();return}
+  host.appendChild(vCanvas);
+  liveReg(VL,key).then(ok=>{if(vKey!==key)return;if(ok){vOk=true;vT0=performance.now();vCanvas.style.opacity=1}});
+}
+function siteLive(now){
+  if(!VL||!vOk||!vCanvas.isConnected||IDS[pi]!=='sites')return;
+  liveFit(vCanvas); const t=(now-vT0)/1000, m=Live.move(MOVES[vKey.length%6],pingPong(t,12));
+  try{VL.render([Object.assign({key:vKey,alpha:1,sky:SKY.has(vKey)?1:0,sweep:.6,sweepPos:-.4+1.8*pingPong(t,8),tl:t,vig:.2},m)],t)}catch(e){vOk=false;vCanvas.remove()}
+}
+gsap.ticker.add(()=>{const now=performance.now();heroLive(now);siteLive(now)});
+openSite('hub');
+
 /* ---------- VOICEOVER CUES ----------
-   The words live in voiceover.js. Each line here gets its visual cue, matched by position,
+   The recorded lines live in voiceover.js (VO_PLAN). Each line here gets its visual cue, matched by position,
    and optional word cues, [word, action], which fire as the voice reaches that word. */
-const C=(cue,at)=>({cue,at:at||[]});
+const C=(cue,at,onWord)=>({cue,at:at||[],onWord});
 const CUES={
  africa:[C(()=>setPro(1)),C(()=>setPro(1)),C(()=>setPro(1),[['front',()=>setPro(2)]]),C(()=>setPro(2)),C(()=>setPro(2),[['Cape',runDive]])],
- vision:[C(()=>goHero(0)),C(()=>goHero(0)),C(()=>goHero(1)),C(()=>goHero(2)),
-  C(()=>spot(nth('.strip .wrap>div',1)),[['7,900',()=>spotAdd(nth('.strip .wrap>div',2))],['Three',()=>spotAdd(nth('.strip .wrap>div',3))],['One',()=>spotAdd(nth('.strip .wrap>div',4))]])],
- question:[C(()=>spot('.quote')),C(()=>spot(nth('.gap',1))),C(()=>spot(nth('.gap',2))),C(()=>spot(nth('.gap',3)))],
- model:[C(()=>{hlSite(null);spot('.mcol .head')}),C(()=>hlSite('hub')),C(()=>hlSite('centre')),C(()=>hlSite('spoke')),C(()=>{hlSite(null);spot('.map')})],
- journey:[C(()=>{goJ(0);spot('.jhead')})].concat(J.map((_,i)=>C(()=>goJ(i)))).concat([C(()=>spot('.curve'))]),
- sites:[
-  C(()=>{openSite('hub');viewImg(0)}),C(()=>{openSite('hub');viewImg(3)}),C(()=>{openSite('hub');viewImg(7)}),C(()=>{openSite('hub');viewImg(12)}),
-  C(()=>{openSite('centre');viewImg(0)}),C(()=>{openSite('centre');viewImg(2)},[['collaboration',()=>viewImg(7)]]),
-  C(()=>{openSite('spoke');viewImg(0)}),C(()=>{openSite('spoke');viewImg(1)})],
- brief:[
-  C(()=>{openSite('hub');showPlan(0);hlZone(null)}),C(()=>{openSite('hub');hlZone('Marine learning commons')}),
-  C(()=>{openSite('hub');hlZone(null);showPlan(0)},[['floor',()=>showPlan(1)],['by',()=>showPlan(2)],['floor',()=>showPlan(3)]]),
-  C(()=>{openSite('centre');hlZone('Learning commons and study')}),C(()=>{openSite('spoke');hlZone(null)}),C(()=>hlZone('u'))],
- capital:[C(()=>spot('.ccol .head')),C(()=>spot(nth('.kpis>div',2)),[['7,900',()=>spotAdd(nth('.kpis>div',1))],['87%',()=>spot(nth('.kpis>div',3))]]),C(()=>spot('#mixCard')),C(()=>spot('#kitCard'))],
- levers:[C(()=>spot('.head')),C(()=>spot(nth('.lever',1))),C(()=>spot(nth('.lever',2))),C(()=>spot(nth('.lever',3)))],
- gates:[C(()=>spot('.head'),[['Gate',()=>spot(nth('.gate',1))]]),C(()=>spot(nth('.gate',2))),C(()=>spot(nth('.gate',3))),C(()=>spot(nth('.gate',4))),C(()=>spot(nth('.gate',5))),C(()=>spot('#riskCard'))],
- ask:[C(()=>spot('h2')),C(()=>spot('.lede')),C(()=>spot('.next>div'),[['cost',()=>spot(nth('.next>div',1))],['enrolment',()=>spotAdd(nth('.next>div',2))],['partners',()=>spotAdd(nth('.next>div',3))]])],
- gallery:[C(()=>{setFilter('all');[['hub',2400],['centre',4400],['spoke',6400]].forEach(([s,t])=>fxAt(t,()=>setFilter(s)))}),C(()=>setFilter('all'))]
+ vision:[C(()=>goHero(0)),C(()=>goHero(1)),C(()=>goHero(2))],
+ network:[C(()=>netPlay()),C(()=>spot(nth('.lg2',1)),[['two',()=>spot(nth('.lg2',2))],['seven',()=>spot(nth('.lg2',3))],['each',()=>spot('.lg2.tot')]])],
+ preface:[C(()=>{spot('.pref-att');quoteTo(-1)}),C(()=>{spot('#vcq');if(qTl)qTl.kill();quoteTo(-1)},[],i=>quoteTo(i)),C(()=>{spot('.more');quoteTo(qws.length)})],
+ question:[C(()=>spot('.quote')),C(()=>spot(nth('.gap',1)),[['research',()=>spotAdd(nth('.gap',2))],['industries',()=>spotAdd(nth('.gap',3))]])],
+ model:[C(()=>{hlSite(null);spot('.mcol .head')}),C(()=>hlSite(null),[['ocean',()=>hlSite('hub')],['Mining',()=>hlSite('centre')],['Health',()=>hlSite('spoke')]]),C(()=>{hlSite(null);spot('.map')})],
+ journey:[C(()=>{goJ(0);spot('.jhead')}),C(()=>goJ(1)),C(()=>goJ(2)),C(()=>goJ(3),[['collaborate',()=>goJ(4)],['research',()=>goJ(5)]]),C(()=>goJ(6)),C(()=>goJ(7),[['Every',()=>spot('.curve')]])],
+ sites:[C(()=>{openSite('hub');viewImg(0)},[['waterfront.',()=>viewImg(1)]]),C(()=>{openSite('centre');viewImg(0)},[['inland,',()=>viewImg(2)]]),C(()=>{openSite('spoke');viewImg(0)},[['community',()=>viewImg(1)]])],
+ brief:[C(()=>{openSite('hub');showPlan(1);hlZone(null)},[['named',()=>hlZone('Marine learning commons')]])],
+ materials:[C(()=>spot('.mhead')),C(()=>studyPick(0)),C(()=>studyPick(1)),C(()=>studyPick(2))],
+ palette:[C(()=>spot(nth('.palc',2)),[['Spoke,',()=>spot(nth('.palc',3))],['Chosen',()=>spot(null)]])],
+ capital:[C(()=>spot('.ccol .head')),C(()=>spot('.ccol .head'),[['kit',()=>spot('#kitCard')]])],
+ levers:[C(()=>spot(nth('.lever',2))),C(()=>spot(nth('.lever',3)))],
+ gates:[C(()=>spot('.head'),[['gate',()=>spot(nth('.gate',1))],['evidence',()=>spot('.gate')]])],
+ ask:[C(()=>spot('h2'),[['first',()=>spotAdd('.lede')]]),C(()=>spot(null))]
 };
 
-/* Each line is split into words. The voice gets the pronunciation fixes from voiceover.js,
-   and every caption word keeps its character range in the spoken text so either can find the other. */
-const PRON=(window.VO_PRON||[]).map(([p,f,r])=>[new RegExp(p,f),r]);
-const REC=(window.VO_TIMINGS&&window.VO_TIMINGS.lines)||{};
-const MUSIC=window.VO_TIMINGS&&window.VO_TIMINGS.music;
-function hashText(s){let h=0x811c9dc5;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return(h>>>0).toString(36)}
+/* Each line knows its recording, its start and end time, and roughly when each word is said
+   (time shared out by the length of each word), so captions and word cues can follow the voice. */
+const TRACKS=window.VO_TRACKS||{}, PLAN=window.VO_PLAN||{};
 const norm=t=>t.replace(/^[“"‘'(]+|[.,:;!?”"’')]+$/g,'');
-function buildLine(id,i,say){
-  const toks=say.split(/\s+/).filter(Boolean), ranges=[]; let sp='';
-  toks.forEach((t,k)=>{let s=t;PRON.forEach(([re,r])=>{re.lastIndex=0;s=s.replace(re,r)});if(k)sp+=' ';ranges.push([sp.length,sp.length+s.length]);sp+=s});
+function buildLine(id,i,[rec,li]){
+  const L=(TRACKS[rec]&&TRACKS[rec].lines[li])||[0,0,''], say=L[2];
+  const toks=say.split(/\s+/).filter(Boolean), w=toks.map(t=>t.length+1), tot=w.reduce((a,b)=>a+b,0)||1;
+  let acc=0; const at0=w.map(x=>{const s=acc/tot;acc+=x;return s});
   const c=(CUES[id]||[])[i]||{}, at=[]; let from=0;
-  (c.at||[]).forEach(([w,fn])=>{const k=toks.findIndex((t,j)=>j>=from&&norm(t)===w);if(k>=0){at.push([k,fn]);from=k+1}});
-  const parts=[], re=/[^.!?]+[.!?]*["”’]?\s*/g; let m;
-  while((m=re.exec(sp)))if(m[0].trim())parts.push({off:m.index,text:m[0]});
-  const key=id+'-'+pad(i+1), rec=REC[key];
-  return {key,say,cue:c.cue,at,toks,ranges,parts:parts.length?parts:[{off:0,text:sp}],rec:rec&&rec.h===hashText(say)?rec:null};
+  (c.at||[]).forEach(([word,fn])=>{const k=toks.findIndex((t,j)=>j>=from&&(norm(t)===norm(word)));if(k>=0){at.push([k,fn]);from=k+1}});
+  return {key:rec+'-'+(li+1),say,cue:c.cue,onWord:c.onWord,at,toks,at0,src:'vo/'+rec+'.mp3',t0:L[0],t1:L[1]};
 }
 const SCRIPT={};
-IDS.forEach(id=>{SCRIPT[id]=((window.VO_LINES||{})[id]||[]).map((s,i)=>buildLine(id,i,s))});
+IDS.forEach(id=>{SCRIPT[id]=(PLAN[id]||[]).map((p,i)=>buildLine(id,i,p))});
 const ALL=IDS.flatMap(id=>SCRIPT[id]);
-const recorded=ALL.length>0&&ALL.every(c=>c.rec);
-const totalWords=ALL.reduce((a,c)=>a+c.toks.length,0);
-$('#ctaMin').textContent='About '+Math.round(totalWords/150)+' min';
+const lastNarrated=IDS.reduce((a,id,k)=>SCRIPT[id].length?k:a,0);
+$('#ctaMin').textContent='About '+Math.round(Object.values(TRACKS).reduce((a,t)=>a+t.dur,0)/60)+' min';
 
 /* ---------- VOICEOVER ENGINE ----------
-   Three ways to speak a line, in order of preference: the ElevenLabs recording with its word timings,
-   the browser's own voice, or captions alone on a timer. All three move the caption word by word. */
-const hasSynth='speechSynthesis' in window&&'SpeechSynthesisUtterance' in window;
-const KEEP=[];
-/* One audio element for every recorded line, so mobile browsers that unlock audio on the first tap keep it unlocked. */
+   Each line plays its segment of the recording. Lines next to each other on one slide flow straight on,
+   so the recording keeps its own pacing; between slides the voice waits for the slide to arrive.
+   If audio cannot play, the captions run on their own at the same pace. */
 let AEL=null; const audioEl=()=>AEL||(AEL=new Audio());
-/* Mobile Safari only lets speech start from a tap, so the first Play speaks a silent utterance straight away. */
-function unlockSpeech(){if(!hasSynth||vo.unlocked||recorded)return;vo.unlocked=true;try{const u=new SpeechSynthesisUtterance(' ');u.volume=0;speechSynthesis.speak(u)}catch(e){}}
 const cues=()=>SCRIPT[IDS[pi]]||[];
 const voBtn=$('#voBtn'), capEl=$('#cap'), voLabel=$('#voLabel');
 const ICON={play:'<svg viewBox="0 0 16 16" fill="currentColor"><path d="M3.5 1.5l11 6.5-11 6.5z"/></svg>',pause:'<svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="2" width="3.5" height="12" rx=".5"/><rect x="9.5" y="2" width="3.5" height="12" rx=".5"/></svg>',again:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13.5 8A5.5 5.5 0 1 1 11.6 3.8"/><path d="M12 1v3.5H8.5"/></svg>'};
@@ -410,26 +512,27 @@ function setWord(i){
   if(i<=vo.wi)return; vo.wi=i;
   for(let k=0;k<=i&&k<capWords.length;k++)capWords[k].classList.add('on');
   const c=cues()[vo.ci]; if(!c)return;
+  if(c.onWord)c.onWord(i);
   while(vo.fired<c.at.length&&c.at[vo.fired][0]<=i){const f=c.at[vo.fired++][1];try{f()}catch(e){}}
 }
+const wordAt=(c,f)=>{let k=-1;for(let j=0;j<c.at0.length;j++)if(c.at0[j]<=f)k=j;return k};
 function updProg(){const n=cues().length,on=vo.state==='playing'||vo.state==='paused';$('#cueBar').style.transform='scaleX('+(on&&n?Math.min(1,(vo.ci+1)/n):0).toFixed(4)+')'}
 function ui(){
   const s=vo.state, b=document.body;
   b.classList.toggle('vo-playing',s==='playing');b.classList.toggle('vo-paused',s==='paused');b.classList.toggle('vo-active',s==='playing'||s==='paused');
   voBtn.innerHTML=s==='playing'?ICON.pause:s==='ended'?ICON.again:ICON.play;
   voBtn.setAttribute('aria-label',s==='playing'?'Pause voiceover':s==='ended'?'Replay voiceover':s==='paused'?'Resume voiceover':'Play voiceover');
-  const eng=vo.engine==='captions'?'Captions only, no speech voice on this device':vo.engine==='voice'?'Voiceover · browser voice':'Voiceover';
+  const eng=vo.engine==='captions'?'Captions only, audio could not play':'Voiceover';
   const n=cues().length;
   voLabel.textContent=s==='idle'?'Voiceover':s==='ended'?'Voiceover finished':(s==='paused'?'Paused · ':'')+eng+(n?' · line '+Math.min(vo.ci+1,n)+' of '+n:'');
   updProg(); sendState();
 }
 function idleCap(){setCap('Press play for the narrated tour. It moves through the slides and pauses whenever you need it to.',true)}
 function halt(keep){
-  vo.tok++; clearTimeout(vo.timer); clearTimeout(vo.tt); cancelAnimationFrame(vo.raf); vo.fx.forEach(clearTimeout); vo.fx=[];
-  if(hasSynth)try{speechSynthesis.cancel()}catch(e){}
-  if(vo.audio){vo.audio.pause();if(!keep){vo.audio.dataset.key='';vo.audio=null}}
+  vo.tok++; clearTimeout(vo.timer); cancelAnimationFrame(vo.raf); vo.fx.forEach(clearTimeout); vo.fx=[];
+  if(vo.audio)vo.audio.pause();
   if(vo.tStart){vo.tDone+=performance.now()-vo.tStart;vo.tStart=0}
-  if(!keep){vo.part=0;vo.pos=0;vo.wi=-1;vo.fired=0;vo.tDone=0;vo.tTotal=null}
+  if(!keep){vo.wi=-1;vo.fired=0;vo.tDone=0;vo.tTotal=null}
 }
 function later(fn,ms){const t=vo.tok;vo.timer=setTimeout(()=>{if(t===vo.tok)fn()},ms)}
 function fxAt(ms,fn){if(vo.state!=='playing')return;const t=vo.tok;vo.fx.push(setTimeout(()=>{if(t===vo.tok&&vo.state==='playing')fn()},ms/vo.rate))}
@@ -443,72 +546,60 @@ function runCue(){
   applyCue(c); capLine(c); wordsMode(false);
   /* On resume, replay the highlights and word cues up to where the voice stopped. */
   const w=vo.wi; vo.wi=-1; vo.fired=0; if(w>=0){wordsMode(true);setWord(w)}
-  ui(); duck(true);
-  speak(c,()=>{setWord(c.toks.length-1);vo.ci++;vo.part=0;vo.pos=0;vo.wi=-1;vo.fired=0;vo.tDone=0;vo.tTotal=null;later(runCue,420)});
+  ui();
+  speak(c,()=>{
+    setWord(c.toks.length-1);
+    const nx=list[vo.ci+1], a=vo.audio, flow=!!(nx&&a&&!a.paused&&nx.src===c.src&&nx.t0>=c.t1-.05&&nx.t0-c.t1<1.5);
+    if(!flow&&a)a.pause();
+    vo.ci++;vo.wi=-1;vo.fired=0;vo.tDone=0;vo.tTotal=null;
+    later(runCue,flow?0:420);
+  });
 }
 function slideDone(){
-  spot(null); duck(false);
-  if(pi>=N-1){halt();vo.state='ended';vo.ci=0;ui();bedPause();setCap('That is the end of the narrated tour. Press play to hear it again, or explore the gallery.',true);return}
+  spot(null);
+  if(pi>=lastNarrated){halt();vo.state='ended';vo.ci=0;ui();setCap('That is the end of the narrated tour. Press play to hear it again, or open the gallery.',true);return}
   if(!vo.auto){vo.waiting=true;ui();setCap('Press the next arrow to continue the tour.',true);return}
   const o={vo:true}; if(IDS[pi]==='model')o.morph='hub';
   later(()=>go(pi+1,o),IDS[pi]==='africa'?0:900);
 }
 function speak(c,done){
-  if(c.rec&&!c.noFile)return playFile(c,done);
-  if(hasSynth&&!vo.synthBroken)return ttsPart(c,done);
+  if(c.src&&c.t1>c.t0&&!c.noFile)return playSeg(c,done);
   timed(c,done);
 }
-function playFile(c,done){
-  const a=audioEl(), t=vo.tok, W=c.rec.w;
-  if(a.dataset.key!==c.key){a.src='audio/'+c.key+'.mp3';a.dataset.key=c.key}
-  vo.audio=a;
-  const fallback=()=>{if(t!==vo.tok)return;c.noFile=true;a.dataset.key='';vo.audio=null;speak(c,done)};
+function playSeg(c,done){
+  const a=audioEl(), t=vo.tok;
+  if(a.dataset.src!==c.src){a.src=c.src;a.dataset.src=c.src;a.preload='auto'}
+  vo.audio=a; a.playbackRate=vo.rate;
+  /* Resume inside the line, carry straight on from the line before, or start at the line's own time. */
+  const ct=a.currentTime;
+  if(!(ct>=c.t0-1.5&&ct<c.t1-.05)){try{a.currentTime=c.t0}catch(e){}}
   let live=true;
-  a.onended=()=>{if(t!==vo.tok||!live)return;live=false;cancelAnimationFrame(vo.raf);a.dataset.key='';vo.audio=null;done()};
-  a.onerror=fallback;
-  a.playbackRate=vo.rate;
-  a.play().then(()=>{
-    if(t!==vo.tok)return; setEngine('file'); wordsMode(true);
-    const loop=()=>{if(t!==vo.tok||!live)return;const ct=a.currentTime;let k=vo.wi;while(k+1<W.length&&W[k+1][0]<=ct+.04)k++;if(k>vo.wi)setWord(k);vo.raf=requestAnimationFrame(loop)};
-    loop();
-  }).catch(err=>{if(err&&err.name==='AbortError')return;fallback()});
-}
-function ttsPart(c,done){
-  const t=vo.tok, ps=c.parts;
-  if(vo.part>=ps.length){vo.part=0;vo.pos=0;done();return}
-  const part=ps[vo.part], base=vo.pos, u=new SpeechSynthesisUtterance(part.text.slice(base));
-  if(vo.voice){u.voice=vo.voice;u.lang=vo.voice.lang}else u.lang='en-GB';
-  u.rate=vo.rate; let started=false;
-  const toWord=g=>{let k=c.ranges.findIndex(r=>g<r[1]);return k<0?c.ranges.length-1:k};
-  const fail=()=>{if(t!==vo.tok)return;vo.synthBroken=true;try{speechSynthesis.cancel()}catch(e){}timed(c,done)};
-  u.onstart=()=>{started=true;setEngine('voice')};
-  u.onboundary=e=>{if(t!==vo.tok||e.name==='sentence'||!(e.charIndex>=0))return;vo.pos=base+e.charIndex;wordsMode(true);setWord(toWord(part.off+vo.pos))};
-  u.onend=()=>{if(t!==vo.tok)return;setWord(toWord(part.off+part.text.trimEnd().length-1));vo.part++;vo.pos=0;ttsPart(c,done)};
-  u.onerror=e=>{if(t!==vo.tok||e.error==='interrupted'||e.error==='canceled')return;fail()};
-  KEEP.push(u);if(KEEP.length>6)KEEP.shift();
-  vo.tt=setTimeout(()=>{if(t!==vo.tok)return;try{speechSynthesis.resume();speechSynthesis.speak(u)}catch(e){fail();return}
-    vo.tt=setTimeout(()=>{if(t===vo.tok&&!started)fail()},4500)},60);
+  const fail=()=>{if(t!==vo.tok||!live)return;live=false;c.noFile=true;timed(c,done)};
+  a.onerror=fail;
+  const loop=()=>{
+    if(t!==vo.tok||!live)return;
+    const now=a.currentTime;
+    if(now>=c.t0-.04){wordsMode(true);const k=wordAt(c,(now-c.t0)/Math.max(.1,c.t1-c.t0));if(k>vo.wi)setWord(k)}
+    if(now>=c.t1||a.ended){live=false;done();return}
+    vo.raf=requestAnimationFrame(loop);
+  };
+  (a.paused?a.play():Promise.resolve()).then(()=>{if(t!==vo.tok||!live)return;setEngine('audio');loop()})
+    .catch(err=>{if(err&&err.name==='AbortError')return;fail()});
 }
 function timed(c,done){
   setEngine('captions'); wordsMode(true);
   const n=c.toks.length;
-  if(vo.tTotal==null){vo.tTotal=(n/2.6*1000+500)/vo.rate;vo.tDone=0}
+  if(vo.tTotal==null){vo.tTotal=((c.t1>c.t0?(c.t1-c.t0)*1000:n/2.6*1000)+300)/vo.rate;vo.tDone=0}
   vo.tStart=performance.now(); const t=vo.tok;
-  const loop=()=>{if(t!==vo.tok)return;const el=vo.tDone+performance.now()-vo.tStart;setWord(Math.min(n-1,Math.floor(el/vo.tTotal*n*1.06)));
+  const loop=()=>{if(t!==vo.tok)return;const el=vo.tDone+performance.now()-vo.tStart;const k=wordAt(c,el/vo.tTotal);if(k>vo.wi)setWord(k);
     if(el>=vo.tTotal){vo.tStart=0;vo.tTotal=null;vo.tDone=0;done();return}vo.raf=requestAnimationFrame(loop)};
   loop();
 }
 function setEngine(e){if(vo.engine!==e){vo.engine=e;ui()}}
 
-/* Optional music under the voice: audio/music.mp3, listed in timings.js. It dips while a line is spoken. */
-let bed=null;
-function bedPlay(){if(!MUSIC)return;if(!bed){bed=new Audio(MUSIC);bed.loop=true;bed.volume=0;bed.onerror=()=>{bed=null}}bed.play().catch(()=>{});duck(false)}
-function bedPause(){if(!bed)return;gsap.to(bed,{volume:0,duration:.6,overwrite:true,onComplete:()=>{if(bed&&vo.state!=='playing')bed.pause()}})}
-function duck(speaking){if(!bed||vo.state!=='playing')return;gsap.to(bed,{volume:speaking?.05:.14,duration:speaking?.4:1.4,overwrite:true})}
-
 function voPlay(){
   if(vo.state==='playing')return;
-  unlockSpeech(); setPause(true); bedPlay();
+  setPause(true);
   if(vo.state==='ended'){vo.state='playing';ui();go(0,{vo:true,force:true});return}
   const wasIdle=vo.state==='idle';
   vo.state='playing';
@@ -517,7 +608,7 @@ function voPlay(){
   if(vo.waiting){vo.waiting=false;ui();go(pi+1,{vo:true});return}
   ui(); runCue();
 }
-function voPause(){if(vo.state!=='playing')return;halt(true);vo.state='paused';ui();bedPause()}
+function voPause(){if(vo.state!=='playing')return;halt(true);vo.state='paused';ui()}
 function voToggle(){vo.state==='playing'?voPause():voPlay()}
 /* A click on a tab, thumbnail or stage while the voiceover plays hands control to the viewer. */
 function userTookOver(){if(vo.state==='playing'){voPause();setCap('Paused while you explore. Press play to carry on from here.',true)}}
@@ -536,44 +627,21 @@ function voSlideChanged(o){
   if(vo.state==='ended'&&!o.vo){vo.state='idle';ui();idleCap();return}
   halt(); vo.waiting=false;
   vo.ci=o.voCue==='last'?Math.max(0,cues().length-1):0;
-  if(vo.state==='playing')later(runCue,o.cut?450:o.vo?800:900);
+  if(vo.state==='playing'){if(cues().length)later(runCue,o.cut?450:o.vo?800:900);else later(slideDone,600)}
   else{const c=cues()[vo.ci];if(c)capLine(c);ui()}
 }
 voBtn.onclick=voToggle;
 $('#heroCta').onclick=voPlay;
-addEventListener('pagehide',()=>{if(hasSynth)try{speechSynthesis.cancel()}catch(e){}});
-
-/* Browser voice choice: prefer South African or British English, then the most natural sounding voice. */
-function scoreVoice(v){
-  const n=v.name,l=(v.lang||'').replace('_','-');let s=0;
-  if(/^en-ZA/i.test(l))s+=40;else if(/^en-GB/i.test(l))s+=30;else if(/^en-(AU|IE|NZ)/i.test(l))s+=14;else if(/^en/i.test(l))s+=8;
-  if(/natural|neural|online|premium|enhanced/i.test(n))s+=45;
-  if(/google/i.test(n))s+=18;
-  if(/sonia|libby|ryan|leah|thomas|maisie|daniel|serena|kate|arthur|martha|stephanie|oliver|luke/i.test(n))s+=10;
-  if(/compact|espeak|eloquence|novelty|whisper|bells|zarvox|bad news|good news|organ|trinoids|jester|cellos|bubbles|boing|albert|fred|junior|ralph|kathy|superstar|grandma|grandpa|rocko|shelley|sandy|flo|reed|eddy/i.test(n))s-=60;
-  return s;
-}
-function loadVoices(){
-  if(!hasSynth)return;
-  const vs=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang||'')).sort((a,b)=>scoreVoice(b)-scoreVoice(a)).slice(0,14);
-  vo.voices=vs;
-  const saved=store.get('vo.voice');
-  vo.voice=vs.find(v=>v.voiceURI===saved)||vs[0]||null;
-  $('#voVoice').innerHTML=vs.length?vs.map((v,i)=>'<option value="'+i+'"'+(v===vo.voice?' selected':'')+'>'+v.name.replace(/^Microsoft |^Google /,'').replace(/ Online \(Natural\)/,' (natural)')+' · '+v.lang+'</option>').join(''):'<option>Default voice</option>';
-}
-if(hasSynth){loadVoices();try{speechSynthesis.addEventListener('voiceschanged',loadVoices)}catch(e){speechSynthesis.onvoiceschanged=loadVoices}}
-$('#voVoice').onchange=e=>{const v=vo.voices[+e.target.value];if(!v)return;vo.voice=v;store.set('vo.voice',v.voiceURI);vo.synthBroken=false;if(vo.state==='playing'){halt(true);vo.pos=0;runCue()}};
 $('#voRate').onchange=e=>{vo.rate=+e.target.value;store.set('vo.rate',vo.rate);if(vo.state==='playing'){halt(true);vo.tTotal=null;vo.tDone=0;runCue()}};
 $('#voAuto').onchange=e=>{vo.auto=e.target.checked;store.set('vo.auto',vo.auto?'1':'0')};
 (function(){const r=+store.get('vo.rate');if(r>=.5&&r<=2){vo.rate=r;$('#voRate').value=String(r)}if(store.get('vo.auto')==='0'){vo.auto=false;$('#voAuto').checked=false}})();
-$('#voiceFld').hidden=!hasSynth||recorded;
-$('#voInfo').textContent=recorded?'Recorded voiceover. Captions follow the voice word by word.':hasSynth?'Uses a voice built into this browser until the recorded voiceover is added. Edge and Chrome offer the most natural voices.':'This browser has no speech voices, so the tour runs with captions only.';
+$('#voInfo').textContent='Recorded voiceover. Captions follow the voice word by word.';
 
 /* ---------- TRANSITIONS ----------
    Slides normally slide sideways. Three moves carry meaning across a cut:
    the globe dives into the Hub, a site's figure travels from the model into its own slide,
    and the Gate one circle opens into the decision we request. Finance slides only fade. */
-const STAG='.gaps,.kpis,.levers,.next,.model,.mcol,.site-top,.site-low,.capgrid,.ccol,.stackcards,.risks';
+const STAG='.gaps,.kpis,.levers,.next,.model,.mcol,.site-top,.site-low,.capgrid,.ccol,.stackcards,.risks,.op-grid,.op-side,.pal';
 const CALM=['capital','levers','gates','ask'];
 pages.forEach((p,i)=>{
   if(CALM.includes(p.id))p.classList.add('calm');
@@ -638,6 +706,9 @@ function enter(p,dir,o){
   if(p.id==='vision'){runCounters();p.classList.toggle('from-dive',!!o.cut&&IDS[pi-1]==='africa');if(o.cut)goHero(0)}
   if(p.id==='model')hlSite(null);
   if(p.id==='brief')hlZone(null);
+  if(p.id==='network'&&!o.vo)netPlay();
+  if(p.id==='preface'){if(o.vo)quoteTo(-1);else quoteReveal()}
+  if(p.id==='materials'){studyShow(0);studyAuto(!o.vo)}
   if(o.vo||o.keepSite)return;
   if(p.id==='journey')goJ(dir>0?0:J.length-1);
   if(p.id==='sites'||p.id==='brief')openSite(dir>0?'hub':'spoke');
@@ -684,13 +755,17 @@ function step(dir){
   go(pi+dir,{step:true});
 }
 const NOTES={
- africa:['Opening','Let the globe turn once in silence, or press play for the narrated tour. Step with the arrows: Africa at a distance, then the three front doors. The next step dives into Cape Town.','Takeaway: this is a network for a continent, not a building.'],
- vision:['The three sites','Let the three images run once. Then say: this is One UNISA, three sites and one system.','Takeaway: this is a network, not a building.'],
+ africa:['Opening','Let the globe turn once in silence, or press play for the narrated tour. Say: for generations, UNISA has taught Africa at a distance. Step with the arrows: Africa at a distance, then the three front doors. The next step dives into Cape Town.','Takeaway: this is a network for a continent, not a building.'],
+ vision:['The three sites','Let the three images run once. Then say: this is UNISA Global, three sites and one system.','Takeaway: this is a network, not a building.'],
+ network:['The network','Let the map draw itself. Name the three sites as the pins appear, then land on the total: 7 900 square metres, one system.','Takeaway: one network, sized to each community.'],
+ preface:['The preface','Read the quote aloud, slowly. It is the University speaking, not us. Then say: this proposal gives that vision a physical form.','Takeaway: the proposal answers the Vice-Chancellor’s own brief.'],
  question:['The question','Frame the problem in the student’s terms. UNISA has the content. What students lack is a place to be supported, to research and to meet industry.','Takeaway: the gap is presence, not curriculum.'],
  model:['The model','Walk the map from Cape Town to Mahikeng to Mthatha. Point to the bars: each site is sized to its community and all three plug into the main campus backbone. Click a site to open it.','Takeaway: scale follows the catchment, the backbone is shared.'],
  journey:['Student journey','Use the arrow keys to step through all eight stages. At each one, read the student line, then the line in yellow. Stress that the system acts before the student asks.','Takeaway: the buildings deliver a service model, and every stage has a measure.'],
  sites:['The three sites','Step through the Hub, the Centre and the Spoke with the arrow keys. Open any render full screen to answer questions about a space.','Takeaway: each site is designed for its niche and its community.'],
  brief:['The brief','For the CFO, linger on the brief: every square metre is named, and the balance for circulation is declared openly.','Takeaway: the brief is specific enough to cost.'],
+ materials:['Materials','Select each point on the Hub facade: concrete for thermal mass and salt air, pigmented plaster that rarely needs repainting, glazing with fins for shade.','Takeaway: the architecture is rooted in place and built to last.'],
+ palette:['Palettes','Point to how each palette answers its climate and landscape. Durable, low maintenance finishes reduce lifetime cost, which matters to the finance committee.','Takeaway: chosen once, built to last.'],
  capital:['Case for capital','Slow down. This is the slide the CFO will judge. Start with the numbers: 87% of the gross area is already allocated to named functions.','Takeaway: one repeatable model, specified once.'],
  levers:['Three levers','Make three points: one repeatable model, space measured by use, and new partnership income.','Takeaway: every lever has a measure.'],
  gates:['Gates and risks','Walk the gates left to right, then the risks. Gate one is the only decision today.','Takeaway: no capital is released without evidence from the previous gate.'],
@@ -815,5 +890,5 @@ commit(start,{instant:true,fromHash:true,keepSite:!!startSite});
 idleCap(); ui();
 
 /* Read-only handle for exporting the script and for automated checks. */
-window.__oneUnisa={script:()=>ALL.map(c=>({key:c.key,file:'audio/'+c.key+'.mp3',text:c.say,recorded:!!c.rec})),state:()=>({slide:IDS[pi],line:vo.ci+1,state:vo.state,engine:vo.engine,word:vo.wi,phase:ph,busy}),play:voPlay,pause:voPause,rate:r=>{vo.rate=r},go:i=>go(i)};
+window.__unisaGlobal={audio:()=>AEL,script:()=>ALL.map(c=>({key:c.key,src:c.src,t0:c.t0,t1:c.t1,text:c.say})),state:()=>({slide:IDS[pi],line:vo.ci+1,state:vo.state,engine:vo.engine,word:vo.wi,phase:ph,busy}),play:voPlay,pause:voPause,rate:r=>{vo.rate=r;if(vo.audio)vo.audio.playbackRate=r},go:i=>go(i)};
 })();
