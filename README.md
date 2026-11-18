@@ -6,8 +6,6 @@ A slide deck for the UNISA Global board presentation, with a recorded narrated t
 
 Double-click `index.html`. Chrome or Edge give the best result: the globe uses WebGL.
 
-For the full effect, serve the folder instead (see *Phone as a remote* below): the renders on the cover and in the site viewer then move gently in depth. Browsers do not allow this from a double-clicked file, so there they show as still images. Everything else is the same.
-
 Move with the arrow keys, a presentation clicker, the scroll wheel or trackpad, a swipe on a tablet, or the arrows in the bottom bar.
 
 | Key | Does |
@@ -36,7 +34,7 @@ If the laptop has Node.js 18 or newer:
 node tools/serve.mjs
 ```
 
-Open the address it prints (http://localhost:8080) instead of double-clicking `index.html`, then press Present. Served this way, the cover and site renders also move in depth. The presenter view shows a QR code: scan it with a phone on the same Wi-Fi to change slides, pause the voice and black the screen. Only that QR code's private link can send commands.
+Open the address it prints (http://localhost:8080) instead of double-clicking `index.html`, then press Present. The presenter view shows a QR code: scan it with a phone on the same Wi-Fi to change slides, pause the voice and black the screen. Only that QR code's private link can send commands.
 
 ## The voiceover
 
@@ -53,11 +51,11 @@ Press play on the cover or in the bottom bar. The tour plays the eleven recorded
 | `js/deck.js` | Slides, voiceover engine, transitions, presenter link |
 | `js/globe.js`, `js/geo-dots.js` | The opening globe and its map dots |
 | `js/netmap.js`, `js/netmap-data.js` | The network map of the three sites |
-| `js/live.js` | Depth motion for the renders (when served) |
+| `js/live.js` | Depth motion for the renders (switched off, see `LIVE_ON` in `js/deck.js`) |
 | `js/voiceover.js` | Timing table of the recorded voiceover |
 | `css/deck.css`, `fonts/` | Styles and the three typefaces |
 | `img/` | Renders, plans, 3D views, material boards, logos and presenter thumbnails |
-| `img/depth/` | Depth maps for the moving renders |
+| `img/depth/` | Depth maps for the depth motion (unused while it is off) |
 | `vid/` | Short films shown in the site viewer |
 | `vo/` | The recorded voiceover, one MP3 per section |
 | `tools/serve.mjs` | Serves the deck with the phone remote |

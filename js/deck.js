@@ -414,9 +414,11 @@ const LIVE_KEYS=new Set(['c-atrium','c-collab','c-commons','c-configs','c-entran
 const SKY=new Set(['h-waterfront','c-exterior','c-entrance','s-exterior','s-forecourt']);
 const MOVES=['orbit','push','truckL','rise','pull','truckR'];
 const ldImg=src=>new Promise(r=>{const i=new Image();i.decoding='async';i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src});
-/* Browsers do not let WebGL read images opened straight from disk, so moving stills run only when the deck
-   is served (GitHub Pages or tools/serve.mjs). Opened by double-click, the renders keep their slow zoom instead. */
-const LIVE_OK=/^https?:$/.test(location.protocol);
+/* Depth motion for the renders. Off: the warp bends straight edges (facades, trees, the ring), so the
+   renders show as the original images with their slow zoom. Set to true to try it again; it only runs when
+   the deck is served over http(s), because browsers do not let WebGL read images opened straight from disk. */
+const LIVE_ON=false;
+const LIVE_OK=LIVE_ON&&/^https?:$/.test(location.protocol);
 const makeLive=cv=>{try{return LIVE_OK&&window.Live?new Live(cv):null}catch(e){return null}};
 async function liveReg(L,key){if(L.has(key))return true;const [a,b]=await Promise.all([ldImg(IMG(key)),ldImg('img/depth/'+key+'.png')]);if(!a||!b)return false;L.register(key,a,b);return true}
 function liveFit(cv){const r=cv.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,1.25);const w=Math.max(2,Math.round(r.width*d)),h=Math.max(2,Math.round(r.height*d));if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h}}
